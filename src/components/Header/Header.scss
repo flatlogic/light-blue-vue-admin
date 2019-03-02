@@ -1,0 +1,50 @@
+@import '../../styles/app';
+
+.header {
+  z-index: 100;
+  padding: 0 1.85rem 0;
+
+  @include media-breakpoint-down(md) {
+    padding: 7px 10px;
+  }
+
+  :global(.dropdown-menu) {
+    background-color: opacify($widget-bg, .2);
+    color: $text-muted;
+    margin-top: 12.5px;
+  }
+}
+
+.input-group-text {
+  padding-right: 0;
+  padding-left: .85rem;
+  color: $gray-600;
+}
+
+.avatar {
+  margin-top: -7px;
+}
+
+.divider {
+  display: block;
+  height: 38px;
+  width: 1px;
+  margin: 0 15px;
+  background: linear-gradient(rgba(51,51,51,0), rgba(51,51,51,0.5), rgba(102,102,102,0));
+}
+
+.header-alert {
+  background: $text-transparent;
+  border: none;
+  font-size: $font-size-sm;
+  line-height: 19px;
+  margin-bottom: 0;
+  padding: 3px 9px;
+  color: $text-muted;
+  text-shadow: none;
+  border-radius: 10px;
+
+  :global(.close) {
+    margin-left: 1rem;
+  }
+}

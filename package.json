@@ -1,0 +1,64 @@
+{
+  "name": "light-blue-vue",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "animate.css": "^3.6.1",
+    "awesome-bootstrap-checkbox": "^1.0.1",
+    "bootstrap": "^4.1.1",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "css-loader": "^1.0.0",
+    "d3": "3.5.17",
+    "expose-loader": "^0.7.5",
+    "express": "^4.16.4",
+    "font-awesome": "4.7.0",
+    "glyphicons-halflings": "^1.9.1",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.3.1",
+    "line-awesome": "icons8/line-awesome",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-raphael": "^2.1.4",
+    "widgster": "^1.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-service": "^3.0.5",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

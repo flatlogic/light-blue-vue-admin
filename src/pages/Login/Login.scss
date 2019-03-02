@@ -1,0 +1,68 @@
+@import '../../styles/app';
+
+.login-page {
+  padding-top: 20vh;
+  height: 100%;
+
+  .widget {
+    max-width: 385px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .footer {
+    margin-bottom: 25px;
+    border-top: none;
+    color: $gray-700;
+    text-align: center;
+
+    > a {
+      color: $gray-700;
+      text-decoration: underline;
+    }
+
+    @media (min-height: 600px) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .logo {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: $font-weight-normal;
+
+    i {
+      font-size: 13px;
+      margin: 0 20px;
+    }
+  }
+}
+
+.widget-bottom-overflow :global(.btn) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.login-info {
+  color: $gray-600;
+}
+
+.login-circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.2);
+}
