@@ -87,34 +87,3 @@
 a.router-link-active {
   font-weight: $font-weight-bold;
 }
-
-.collapse,
-.collapsing {
-  border: none;
-  box-shadow: none;
-  margin: 0;
-  border-radius: 0;
-
-  a {
-    line-height: 20px !important;
-
-    &.router-link-active {
-      font-weight: $font-weight-semi-bold;
-      color: $sidebar-color;
-    }
-  }
-
-  ul {
-    padding: $spacer;
-
-    li {
-      list-style: none;
-    }
-
-    a {
-      padding: 10px 20px 10px 26px;
-      font-size: $font-size-mini;
-
-    }
-  }
-}

@@ -1,10 +1,7 @@
 @import '../../styles/app';
 
 .notifications {
-  @include media-breakpoint-up(md) {
-   width: 343px;
- }
-
+  width: 343px;
   height: 100%;
   border: none;
 

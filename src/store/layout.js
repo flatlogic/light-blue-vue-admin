@@ -1,7 +1,7 @@
 export default {
   namespaced: true,
   state: {
-    sidebarClose: false,
+    sidebarClose: true,
     sidebarActiveElement: null,
   },
   mutations: {
@@ -10,19 +10,6 @@ export default {
         state.sidebarClose = value;
       } else {
         state.sidebarClose = !state.sidebarClose;
-      }
-    },
-    setSidebarState(state, value) {
-      state.sedebarClose = value;
-    },
-    handleSwipe(state, e) {
-      if (e.direction === 4 && !state.chatOpen) {
-        state.sidebarClose = false;
-      }
-
-      if (e.direction === 2 && !state.sidebarClose) {
-        state.sidebarClose = true;
-
       }
     },
     changeSidebarActive(state, index) {

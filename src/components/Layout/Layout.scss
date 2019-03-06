@@ -14,7 +14,7 @@
   padding: $content-padding $content-padding ($content-padding + 1rem);
 
   @media (max-width: breakpoint-max(sm)) {
-    padding: 20px 15px;
+    padding: 20px 15px 40px;
   }
 
   // hammers disallows text selection, allowing it for large screens

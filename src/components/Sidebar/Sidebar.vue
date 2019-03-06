@@ -1,27 +1,28 @@
 <template>
+  <b-collapse class="sidebar-collapse" id="sidebar-collapse" :visible="sidebarOpened">
   <nav
-    :class="{sidebar: true, sidebarOpened}"
+    :class="{sidebar: true}"
   >
     <header class="logo">
       <router-link to="/app">Light <span class="fw-semi-bold">Blue</span></router-link>
     </header>
     <ul class="nav">
       <NavLink
-        :activeItem="activeItem"
-        header="Dashboard"
-        link="/app/dashboard"
-        iconName="flaticon-home"
-        index="dashboard"
-        isHeader
+              :activeItem="activeItem"
+              header="Dashboard"
+              link="/app/dashboard"
+              iconName="flaticon-home"
+              index="dashboard"
+              isHeader
       />
       <h5 class="navTitle">TEMPLATE</h5>
       <NavLink
-        :activeItem="activeItem"
-        header="Another Page"
-        link="/app/another-page"
-        iconName="flaticon-controls"
-        index="typography"
-        isHeader
+              :activeItem="activeItem"
+              header="Another Page"
+              link="/app/another-page"
+              iconName="flaticon-controls"
+              index="typography"
+              isHeader
       />
     </ul>
     <h5 class="navTitle d-sm-down-none">
@@ -50,6 +51,7 @@
         </a>
       </li>
     </ul>
+
     <h5 class="navTitle d-sm-down-none">
       PROJECTS
     </h5>
@@ -67,6 +69,7 @@
       </b-alert>
     </div>
   </nav>
+  </b-collapse>
 </template>
 
 <script>

@@ -39,39 +39,38 @@ $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
 $lime:     #8cbf26 !default;
-$red:      #db4912 !default;
+$red:      #ff0115 !default;
 $red-dark: #d04f4f !default;
-$blue:     #4e85bd !default;
-$green:    #57b955 !default;
-$orange:   #f0af03 !default;
+$blue:     #196EFF !default;
+$green: #2ada7a !default;
+$orange: #ffc107 !default;
 $pink:     #e671b8 !default;
 $purple:   #a700ae !default;
 $brown:    #a05000 !default;
-$teal:     #4ebfbb !default;
+$teal:     #7f49fa !default;
 
 $theme-colors: (
-  primary: $blue,
-  secondary: $gray-700,
-  success: $green,
-  info: $teal,
-  warning: $orange,
-  danger: $red,
-  dark: $gray-700,
-  inverse: $gray-100,
-  gray: $gray-300,
-  light: $gray-100,
-  default: #e9ecef,
-  primary-light: #dee4ee,
-  success-light: #ecfaec,
-  info-light: #f2fafa,
-  warning-light: #fdf7e6,
-  danger-light: #fff2ef,
+        primary: $blue,
+        secondary: $gray-700,
+        success: $green,
+        info: $teal,
+        warning: $orange,
+        danger: $red,
+        dark: $gray-700,
+        inverse: $gray-100,
+        gray: $gray-300,
+        light: $gray-100,
+        default: #e9ecef,
+        primary-light: #dee4ee,
+        success-light: #ecfaec,
+        info-light: #f2fafa,
+        warning-light: #fdf7e6,
+        danger-light: #fff2ef,
 );
 
 $link-color: #62c9ff;
 
-//$text-color: #555 !default;
-$text-color: #fff !default;
+$text-color: #444 !default;
 $text-muted: rgba($text-color, .7) !default;
 
 $font-weight-bold: 700 !default;
@@ -82,9 +81,9 @@ $font-weight-base: $font-weight-thin !default;
 
 $addition-bg: rgba($white, .1) !default;
 
-$body-bg: #36455a !default;
-$body-bg-gradient-start: $body-bg 20%;
-$body-bg-gradient-end: #889caf;
+$body-bg: #e1e5e8 !default;
+$body-bg-gradient-start: $body-bg 10%;
+$body-bg-gradient-end: #9aacbf;
 $body-bg-light: lighten($body-bg, 3%);
 
 $headings-font-weight: 300;
@@ -117,9 +116,9 @@ $sidebar-item-active-color: #fff !default;
 
 // Widgets
 // -------------------------
-$widget-bg: rgba(0,0,0,.24);
-//$widget-bg: rgba(255,255,255,.23);
-$widget-title-color: #fff;
+//$widget-bg: rgba(0,0,0,.24);
+$widget-bg: rgba(255,255,255,.23);
+$widget-title-color: $text-color;
 $widget-shadow: 0 23px 20px -20px rgba(darken($body-bg, 25%),0.1), 0 0 15px rgba(darken($body-bg, 25%),0.06);
 $widget-shadow-designated: -1px 0 8px rgba(0,0,0,.2);
 $widget-border-radius: .5rem;

@@ -21,10 +21,6 @@
     line-height: 1.7;
     padding: 0.6rem 0.85rem;
   }
-
-  @include media-breakpoint-down(sm) {
-    font-size: $font-size-lg;
-  }
 }
 
 .progress-bar {

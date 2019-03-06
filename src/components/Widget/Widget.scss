@@ -87,18 +87,13 @@
   a {
     padding: 1px 4px;
     border-radius: 4px;
-    color: rgba($black, 0.4);
+    color: $widget-title-color;
 
     @include transition(color 0.15s ease-in-out);
 
     &:hover {
       color: rgba($black, 0.1);
       text-decoration: none;
-    }
-
-    .la {
-      position: relative;
-      top: 2px;
     }
 
     .glyphicon {

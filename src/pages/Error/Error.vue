@@ -13,7 +13,7 @@
           <b-form-group>
             <b-form-input class="input-transparent" size="lg" type="text" placeholder="Search Pages" />
           </b-form-group>
-          <router-link tag="a" to="/app/extra/search">
+          <router-link tag="a" to="/app/dashboard">
             <b-button class="errorBtn" type="submit" variant="inverse">
                 Search <i class="fa fa-search ml-xs" />
             </b-button>

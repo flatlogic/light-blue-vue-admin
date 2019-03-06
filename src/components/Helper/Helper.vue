@@ -5,20 +5,20 @@
                 <div class="theme-helper-toggler" @click="toggle">
                     <div class="theme-helper-spinner text-white">
                         <i class="la la-cog"></i>
-                        <i class="la la-cog fs-smaller"></i>
+                        <i class="la la-cog"></i>
                     </div>
                 </div>
                 <h6>Configuration</h6>
             </header>
             <div class="widget-body mt-3">
                 <div class="mt-4">
-                    <a href="https://flatlogic.com/admin-dashboards/sing-app-vue"
+                    <a href="https://flatlogic.com/admin-dashboards/light-blue-vue/"
                     target="_blank"
                     role="button"
                     class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">
                         Purchase
                     </a>
-                    <a href="http://demo.flatlogic.com/sing-app/documentation/"
+                    <a href="https://flatlogic.com/admin-dashboards/light-blue-vue/"
                     target="_blank"
                     role="button"
                     class="btn btn-inverse btn-rounded-f btn-block fs-mini">
@@ -30,12 +30,12 @@
                     target="_blank"
                     href="https://flatlogic.com/contact"
                     class="btn btn-outline-default btn-rounded-f fs-mini text-muted d-flex align-items-center">
-                        <i class="glyphicon glyphicon-headphones mr-xs"></i>
+                        <i class="glyphicon glyphicon-headphones mr-xs mt-n-sm"></i>
                         Support
                     </a>
                     <a role="button"
                     target="_blank"
-                    href="https://github.com/flatlogic/sing-app"
+                    href="https://github.com/flatlogic/light-blue-vue-lite"
                     class="btn btn-outline-default btn-rounded-f fs-mini text-muted d-flex align-items-center">
                         <i class="fa fa-github mr-xs"></i>
                         Github
@@ -45,14 +45,14 @@
                     <span class="fs-sm">
                         Thank you for sharing!
                     </span>
-                    <div class="d-flexjustify-content-center text-light mt-2">
+                    <div class="d-flexjustify-content-center text-light mt-2 h2 mb-0">
                         <a target="_blank"
-                        href="https://twitter.com/intent/tweet?text=Admin%20dashboard%20template%20built%20with%20NodeJS,%20React%20and%20Bootstrap%204!&url=https://demo.flatlogic.com/sing-app/html-bs4/&via=flatlogic">
-                            <i class="fa fa-twitter pr-1"></i>
+                        href="https://twitter.com/intent/tweet?text=Amazing%20admin%20dashboard%20template%20built%20with%20%23VueJS%20and%20%23Bootstrap%204!&url=https://flatlogic.com/admin-dashboards/light-blue-vue-lite/demo&via=flatlogic">
+                            <i class="fa fa-twitter mx-3"></i>
                         </a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://demo.flatlogic.com/sing-app/html-bs4/"
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://flatlogic.com/admin-dashboards/light-blue-vue-lite/demo"
                         target="_blank">
-                            <i class="fa fa-facebook pl-1"></i>
+                            <i class="fa fa-facebook mx-3"></i>
                         </a>
                     </div>
                 </div>
