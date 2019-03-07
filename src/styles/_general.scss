@@ -10,12 +10,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-html,
-body,
-#app {
-  height: 100%;
+  position: relative;
 }
 
 a,

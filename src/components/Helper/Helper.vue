@@ -19,6 +19,12 @@
                         Purchase
                     </a>
                     <a href="https://flatlogic.com/admin-dashboards/light-blue-vue/"
+                       target="_blank"
+                       role="button"
+                       class="btn btn-danger btn-rounded-f btn-block fs-mini text-white">
+                        Go FULL Version
+                    </a>
+                    <a href="https://flatlogic.com/admin-dashboards/light-blue-vue/"
                     target="_blank"
                     role="button"
                     class="btn btn-inverse btn-rounded-f btn-block fs-mini">
