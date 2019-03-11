@@ -3,6 +3,10 @@ html {
   font-size: $font-size-initial;
 }
 
+html, body {
+  min-height: 100vh;
+}
+
 body {
   overflow-x: hidden;
   color: $text-color;

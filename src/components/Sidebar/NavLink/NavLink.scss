@@ -35,6 +35,10 @@
     and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       line-height: 55px;
     }
+
+    &:hover {
+      font-weight: $font-weight-semi-bold;
+    }
   }
 
   .icon {
@@ -64,6 +68,10 @@
   }
 }
 
+.nav-link-nested > a {
+  line-height: 40px !important;
+}
+
 .headerLabel {
   font-weight: 600;
   color: theme-color('warning');
@@ -85,5 +93,8 @@
 }
 
 a.router-link-active {
-  font-weight: $font-weight-bold;
+  &,
+  &:hover {
+    font-weight: $font-weight-bold;
+  }
 }

@@ -22,7 +22,7 @@
     </div>
     <b-collapse :id="'collapse' + index" :visible="isActive">
       <ul>
-        <NavLink v-for="link in childrenLinks"
+        <NavLink class="nav-link-nested" v-for="link in childrenLinks"
           :activeItem="activeItem"
           :header="link.header"
           :index="link.index"
