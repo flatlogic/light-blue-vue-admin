@@ -558,6 +558,9 @@ $i: 0;
 
 .chart-overflow-bottom {
   margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
+  overflow: hidden;
+  border-bottom-left-radius: $widget-border-radius;
+  border-bottom-right-radius: $widget-border-radius;
 }
 
 // Background

@@ -17,12 +17,37 @@
       />
       <h5 class="navTitle">TEMPLATE</h5>
       <NavLink
-              :activeItem="activeItem"
-              header="Another Page"
-              link="/app/another-page"
-              iconName="flaticon-controls"
+              header="Typography"
+              link="/app/typography"
+              iconName="flaticon-list"
               index="typography"
               isHeader
+      />
+      <NavLink
+              header="Tables Basic"
+              link="/app/tables"
+              iconName="flaticon-equal-1"
+              index="tables"
+              isHeader
+      />
+      <NavLink
+              header="Notifications"
+              link="/app/notifications"
+              iconName="flaticon-star"
+              index="notifications"
+              isHeader
+      />
+      <NavLink
+              :activeItem="activeItem"
+              header="Components"
+              link="/app/components"
+              iconName="flaticon-network"
+              index="components"
+              :childrenLinks="[
+          { header: 'Charts', link: '/app/components/charts' },
+          { header: 'Icons', link: '/app/components/icons' },
+          { header: 'Maps', link: '/app/components/maps' },
+        ]"
       />
     </ul>
     <h5 class="navTitle d-sm-down-none">
@@ -74,7 +99,6 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import isScreen from '@/core/screenHelper';
 import NavLink from './NavLink/NavLink';
 
 export default {

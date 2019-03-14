@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import Layout from '@/components/Layout/Layout';
 import AnotherPage from '@/pages/AnotherPage/AnotherPage';
-import AnalyticsPage from '@/pages/Dashboard/Dashboard';
+import Dashboard from '@/pages/Dashboard/Dashboard';
 import Login from '@/pages/Login/Login';
 import ErrorPage from '@/pages/Error/Error';
 
@@ -29,8 +29,8 @@ export default new Router({
       children: [
         {
           path: 'dashboard',
-          name: 'AnalyticsPage',
-          component: AnalyticsPage,
+          name: 'Dashboard',
+          component: Dashboard,
         },
         {
           path: 'another-page',
