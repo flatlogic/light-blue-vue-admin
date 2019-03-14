@@ -25,3 +25,7 @@
   border: none !important;
   display: block !important;
 }
+
+.area-chart :global(canvas) {
+  width: 100% !important;
+}

@@ -310,7 +310,7 @@
             </table>
           </div>
           <div class="widget-body mt-xlg chart-overflow-bottom">
-            <area-chart height="100px" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}}"  :chart-data="dataCollection"></area-chart>
+            <area-chart class="area-chart" height="100px" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}}"  :chart-data="dataCollection"></area-chart>
           </div>
         </Widget>
       </b-col>
@@ -414,10 +414,12 @@ export default {
           {
             label: 'Data One',
             backgroundColor: '#f87979',
+            borderColor: 'transparent',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }, {
             label: 'Data Two',
             backgroundColor: '#7c87f8',
+            borderColor: 'transparent',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }
         ]
