@@ -5,12 +5,19 @@ import 'expose-loader?$!jquery' // eslint-disable-line
 import Vue from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import VCalendar from 'v-calendar';
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 import store from './store';
 import router from './Routes';
 import App from './App';
 
 Vue.use(BootstrapVue);
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg',
+  },
+});
 
 Vue.use(VCalendar, {
   firstDayOfWeek: 2,  // Monday
