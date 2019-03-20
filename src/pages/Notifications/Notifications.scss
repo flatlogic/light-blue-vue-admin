@@ -11,13 +11,13 @@
 .location-selector .bit {
   @include transition(background-color 0.15s ease-in-out);
 
-  background-color: $gray-300;
+  background-color: $gray-400;
   cursor: pointer;
   position: absolute;
 }
 
 .location-selector .bit:hover {
-  background-color: $gray-400;
+  background-color: $gray-600;
 }
 
 .location-selector .bit.top,

@@ -1010,20 +1010,14 @@ ul.messenger-theme-air {
   font-family: $font-family-base !important;
 }
 
-.nvd3-svg {
-  display: block;
-  width: 100%;
-}
-
-.nv-background {
-  display: none;
-}
-
-.nvtooltip,
 .morris-hover {
   position: absolute;
   background: #fff;
   padding: 3px;
   border-radius: $widget-border-radius;
   box-shadow: $widget-shadow;
+}
+
+.nvd3 .nv-axis line {
+  display: none;
 }

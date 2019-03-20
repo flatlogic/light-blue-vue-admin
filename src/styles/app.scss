@@ -3,8 +3,8 @@
  * This file is loaded via separate loader thus allowing to use original bootstrap classes (e.g. .btn-default) through out the app.
  */
 @import '../../node_modules/bootstrap/scss/functions';
-@import 'variables';
-//@import 'variables-light';
+//@import 'variables';
+@import 'variables-light';
 @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import 'mixins';

@@ -39,7 +39,7 @@
               <span class="login-circle"><i class="fa fa-caret-right"></i></span>
               Sign in
             </b-button>
-            <a href="#" class="text-center text-white w-100 d-block mt-4">Forgot Username or Password?</a>
+            <a href="#" class="text-center text-gray w-100 d-block mt-4">Forgot Username or Password?</a>
           </div>
           <div class="widget-bottom-overflow">
             <b-button class="btn-block btn-lg fs-normal" type="cancel" variant="primary">
