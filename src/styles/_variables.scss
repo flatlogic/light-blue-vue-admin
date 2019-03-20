@@ -70,8 +70,8 @@ $theme-colors: (
 
 $link-color: #62c9ff;
 
-//$text-color: #555 !default;
 $text-color: #fff !default;
+$body-color: $text-color;
 $text-muted: rgba($text-color, .7) !default;
 
 $font-weight-bold: 700 !default;
@@ -158,8 +158,8 @@ $dropdown-border-radius: $widget-border-radius;
 
 //== Navs
 //
-$nav-tabs-active-link-hover-bg: $white !default;
-$nav-tabs-active-link-hover-color: $gray-700 !default;
+$nav-tabs-active-link-hover-bg: transparentize($widget-bg, .1) !default;
+$nav-tabs-active-link-hover-color: $text-color !default;
 
 //== Forms
 //

@@ -529,12 +529,12 @@ h6,
   }
 
   border-bottom: none;
-  background-color: $gray-400;
+  background-color: transparentize($widget-bg, .1);
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
 
   > .nav-item {
-    margin-bottom: -2px;
+    margin-bottom: 0;
 
     > .nav-link {
       padding: 12px 18px;
@@ -569,8 +569,9 @@ h6,
         background-color: $nav-tabs-active-link-hover-bg;
         color: $nav-tabs-active-link-hover-color;
         border: none;
+        font-weight: $font-weight-semi-bold;
 
-        @include box-shadow(1px 1px 2px #ccc);
+        @include box-shadow(none);
       }
     }
   }
@@ -579,7 +580,7 @@ h6,
 .tab-content {
   position: relative;
   z-index: 1;
-  background-color: $white;
+  background-color: $widget-bg;
 
   > .tab-pane {
     padding: $spacer*2;
@@ -1007,4 +1008,22 @@ ul.messenger.messenger-spinner-active .messenger-spinner .messenger-spinner {
 
 ul.messenger-theme-air {
   font-family: $font-family-base !important;
+}
+
+.nvd3-svg {
+  display: block;
+  width: 100%;
+}
+
+.nv-background {
+  display: none;
+}
+
+.nvtooltip,
+.morris-hover {
+  position: absolute;
+  background: #fff;
+  padding: 3px;
+  border-radius: $widget-border-radius;
+  box-shadow: $widget-shadow;
 }
