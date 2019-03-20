@@ -6,7 +6,7 @@ Free and open-source admin dashboard template built with Vue.js and Bootstrap 4.
 
 [View Demo](https://flatlogic.com/admin-dashboards/light-blue-vue-lite/demo) | [Download](https://github.com/flatlogic/light-blue-vue-admin/archive/master.zip) | [More templates](https://flatlogic.com/admin-dashboards)
 
-![image](https://user-images.githubusercontent.com/24964748/48494482-05a3ba80-e83f-11e8-95e6-4a6d2e76687b.png)
+![image](https://user-images.githubusercontent.com/1212194/54691119-c3172500-4b33-11e9-8f2f-1a5e1610dbc5.png)
 
 This dashboard is a lite version (containing only few components) of our [Light Blue Vue Full](https://flatlogic.com/admin-dashboards/light-blue-vue). There are all ready-to-use components, that are in full version. It is built on the top of vue-cli-3, so it well supported along the web. You can easy customize template by changing SCSS variables. All paddings and colors are in _variables.scss file.
 
