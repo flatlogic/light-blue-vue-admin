@@ -529,9 +529,6 @@ h6,
   }
 
   border-bottom: none;
-  background-color: transparentize($widget-bg, .1);
-  border-top-left-radius: $border-radius;
-  border-top-right-radius: $border-radius;
 
   > .nav-item {
     margin-bottom: 0;
