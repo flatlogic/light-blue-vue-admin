@@ -79,6 +79,8 @@
       let hs = polygonTemplate.states.create("hover");
       hs.properties.fillOpacity = 0.5;
 
+      polygonTemplate.strokeOpacity = 0.4;
+
       let citySeries = map.series.push(new am4maps.MapImageSeries());
       citySeries.data = cities;
       citySeries.dataFields.value = "size";
