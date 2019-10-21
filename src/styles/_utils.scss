@@ -440,7 +440,7 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
     border-right: none;
   }
 
-  .input-transparent:focus {
+  .form-control.input-transparent:focus {
     background-color: $widget-bg;
     border-color: transparentize($widget-bg, 0.15);
   }
