@@ -18,13 +18,13 @@
                     class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">
                         Purchase
                     </a>
-                    <a href="https://flatlogic.com/templates/light-blue-vue/"
+                    <a href="https://demo.flatlogic.com/light-blue-vue/white"
                        target="_blank"
                        role="button"
                        class="btn btn-danger btn-rounded-f btn-block fs-mini text-white">
                         Go FULL Version
                     </a>
-                    <a href="https://flatlogic.com/templates/light-blue-vue/"
+                    <a href="https://demo.flatlogic.com/light-blue-vue/white/#/documentation"
                     target="_blank"
                     role="button"
                     class="btn btn-inverse btn-rounded-f btn-block fs-mini">
