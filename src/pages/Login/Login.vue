@@ -1,56 +1,62 @@
 <template>
-  <div class="login-page">
+  <div class="auth-page">
     <b-container>
-      <Widget class="mx-auto" title="<h3 class='mt-0 fw-normal text-center'>Login to your Web App</h3>" customHeader>
-        <p class="text-center login-info mb-0 mt">
-          Use Facebook, Twitter or your email to sign in.
-        </p>
-        <p class="text-center login-info">
-          Don't have an account? Sign up now!
+      <Widget class="widget-auth mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
+        <p class="widget-auth-info">
+            Use your email to sign in.
         </p>
         <form class="mt" @submit.prevent="login">
           <b-alert class="alert-sm" variant="danger" :show="!!errorMessage">
             {{errorMessage}}
           </b-alert>
-          <b-form-group label="Email" label-for="username-input">
-            <b-input-group class="input-group-transparent">
-              <b-input-group-text slot="prepend"><i class="fa fa-user text-white"></i></b-input-group-text>
-              <b-form-input id="username-input"
-                            class="input-transparent pl-0"
-                            type="text"
-                            v-model="form.email"
-                            required
-                            placeholder="Your Email" />
+          <b-form-group label="Email" label-for="email">
+            <b-input-group class="input-group-no-border">
+              <b-input-group-text slot="prepend"><i class="la la-user text-white"></i></b-input-group-text>
+              <input id="email"
+                     ref="email"
+                     class="form-control input-transparent pl-3"
+                     type="email"
+                     required
+                     placeholder="Email"/>
             </b-input-group>
           </b-form-group>
-          <b-form-group label="Password" label-for="password-input">
-            <b-input-group class="input-group-transparent">
-              <b-input-group-text slot="prepend"><i class="fa fa-lock text-white"></i></b-input-group-text>
-              <b-form-input id="password-input"
-                            class="input-transparent pl-0"
-                            type="text"
-                            v-model="form.password"
-                            required
-                            placeholder="Your Password" />
+          <b-form-group label="Password" label-for="password">
+            <b-input-group class="input-group-no-border">
+              <b-input-group-text slot="prepend"><i class="la la-lock text-white"></i></b-input-group-text>
+              <input id="password"
+                     ref="password"
+                     class="form-control input-transparent pl-3"
+                     type="password"
+                     required
+                     placeholder="Password"/>
             </b-input-group>
           </b-form-group>
-          <div class="widget-middle-overflow bg-widget mt-4 px-4 py-3">
-            <b-button class="btn-block btn-lg fs-normal" type="submit" variant="danger">
-              <span class="login-circle"><i class="fa fa-caret-right"></i></span>
-              Sign in
+          <div class="bg-widget auth-widget-footer">
+            <b-button type="submit" variant="danger" class="auth-btn" size="sm">
+              <span class="auth-btn-circle">
+                <i class="la la-caret-right"></i>
+              </span>
+              Login
             </b-button>
-            <a href="#" class="text-center text-gray w-100 d-block mt-4">Forgot Username or Password?</a>
-          </div>
-          <div class="widget-bottom-overflow">
-            <b-button class="btn-block btn-lg fs-normal" type="cancel" variant="primary">
-              <i class="fa fa-facebook-square mr-2 fa-lg"></i>
-              Login with Facebook
-            </b-button>
+            <p class="widget-auth-info mt-4">
+              Don't have an account? Sign up now!
+            </p>
+            <router-link class="d-block text-center mb-4" to="login">Create an Account</router-link>
+            <div class="social-buttons">
+              <b-button variant="primary" class="social-button">
+                <i class="social-icon social-google"></i>
+                <p class="social-text">GOOGLE</p>
+              </b-button>
+              <b-button variant="success" class="social-button">
+                <i class="social-icon social-microsoft"></i>
+                <p class="social-text">MICROSOFT</p>
+              </b-button>
+            </div>
           </div>
         </form>
       </Widget>
     </b-container>
-    <footer class="footer">
+    <footer class="auth-footer">
       Light Blue Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com" target="_blank">Flatlogic</a>
     </footer>
   </div>
@@ -65,18 +71,14 @@ export default {
   data() {
     return {
       errorMessage: null,
-      form: {
-        email: '',
-        name: '',
-      }
     };
   },
   methods: {
     login() {
-      const username = this.form.email;
-      const password = this.form.password;
+      const email = this.$refs.email.value;
+      const password = this.$refs.password.value;
 
-      if (username.length !== 0 && password.length !== 0) {
+      if (email.length !== 0 && password.length !== 0) {
         window.localStorage.setItem('authenticated', true);
         this.$router.push('/app/dashboard');
       }
@@ -89,5 +91,3 @@ export default {
   },
 };
 </script>
-
-<style src="./Login.scss" lang="scss" scoped />

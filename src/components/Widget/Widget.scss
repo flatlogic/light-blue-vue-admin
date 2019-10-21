@@ -16,6 +16,56 @@
   border-radius: $widget-border-radius;
   box-shadow: $widget-shadow;
 
+  &.loading {
+    min-height: 150px;
+  }
+
+  [control='collapse'] {
+    display: unset;
+  }
+
+  [control='expand'] {
+    display: none;
+  }
+
+  [control='fullscreen'] {
+    display: unset;
+  }
+
+  [control='restore'] {
+    display: none;
+  }
+
+  &.collapsed {
+    min-height: unset;
+
+    [control='collapse'] {
+      display: none;
+    }
+
+    [control='expand'] {
+      display: unset;
+    }
+  }
+
+  &.fullscreened {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    z-index: 10000;
+
+    [control='fullscreen'] {
+      display: none;
+    }
+
+    [control='restore'] {
+      display: unset;
+    }
+  }
+
   > header {
     margin: (-$widget-padding-vertical) (-$widget-padding-horizontal);
     padding: $widget-padding-vertical $widget-padding-horizontal;
@@ -67,7 +117,9 @@
 
   > footer {
     margin: $spacer/2 (-$widget-padding-horizontal) (-$widget-padding-vertical);
-    padding: 10px 20px;
+    padding: $widget-padding-vertical $widget-padding-horizontal;
+    border-bottom-left-radius: $widget-border-radius;
+    border-bottom-right-radius: $widget-border-radius;
   }
 }
 
@@ -94,6 +146,11 @@
     &:hover {
       color: rgba($black, 0.1);
       text-decoration: none;
+    }
+
+    .la {
+      position: relative;
+      top: 2px;
     }
 
     .glyphicon {
@@ -215,4 +272,10 @@
     line-height: 45px;
     display: inline-block;
   }
+}
+
+.widget-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

@@ -30,10 +30,7 @@
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-widget">
-                <span><animated-number :value="75"
-                                       :round="true"
-                                       :duration="1000"
-                                       :delay="1500" />%</span>
+                <span><AnimatedNumber :value="75" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
@@ -45,10 +42,7 @@
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-widget">
-                <span><animated-number :value="84"
-                                       :round="true"
-                                       :duration="1000"
-                                       :delay="1500" />%</span>
+                <span><AnimatedNumber :value="84" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
@@ -60,10 +54,7 @@
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-widget">
-                <span><animated-number :value="92"
-                                       :round="true"
-                                       :duration="1000"
-                                       :delay="1500" />%</span>
+                <span><AnimatedNumber :value="92" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
@@ -374,6 +365,13 @@ export default {
   },
   data() {
     return {
+      animateNumberOptions: {
+        duration: 2000,
+        easing: 'easeInQuad',
+        formatValue(value) {
+          return value.toFixed(0);
+        }
+      },
       checkedArr: [false, false, false],
       dataCollection: null,
       todos
