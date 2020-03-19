@@ -1,6 +1,6 @@
 @import '../../styles/app';
 
-.dashboard-page {
+.visits-page {
   .post-comments footer {
     margin: 0 (-$widget-padding-horizontal) (-$widget-padding-vertical);
     padding: $widget-padding-vertical $widget-padding-horizontal;
@@ -18,15 +18,4 @@
       }
     }
   }
-}
-
-.v-calendar {
-  background: none !important;
-  border: none !important;
-  display: block !important;
-  color: $text-color !important;
-}
-
-.area-chart :global(canvas) {
-  width: 100% !important;
 }

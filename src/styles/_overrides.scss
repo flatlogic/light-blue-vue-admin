@@ -30,6 +30,7 @@
 .progress {
   height: $spacer * 1.3;
   margin-bottom: $spacer / 2;
+  background: theme-color("dark");
 }
 
 .progress-sm {
@@ -38,6 +39,14 @@
 
 .progress-xs {
   height: 5px;
+}
+
+.input-group {
+  .input-group-append, .input-group-prepend {
+    .btn {
+      border: none;
+    }
+  }
 }
 
 .form-control {
@@ -49,15 +58,6 @@
   &:focus {
     box-shadow: none;
   }
-
-  &.no-border {
-    border: none;
-    background-color: darken($input-bg, 5%);
-
-    &:focus {
-      background-color: darken($input-bg, 7%);
-    }
-  }
 }
 
 legend {
@@ -68,7 +68,7 @@ legend {
   line-height: inherit;
   color: $text-muted;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $border-color;
   font-size: 15px;
   font-weight: $font-weight-normal;
 }
@@ -81,7 +81,7 @@ legend {
   font-size: $font-size-sm;
 
   .close {
-    color: #fff;
+    color: $text-color;
   }
 }
 
@@ -107,22 +107,9 @@ legend {
   font-size: 11px;
 }
 
-.badge-success,
-.badge-info,
-.badge-warning,
-.badge-danger {
-  color: $white;
-}
-
-.badge-white {
-  @include badge-variant($white);
-}
-
-.badge-default {
-  @include badge-variant($gray-300);
-}
-
 .badge {
+  color: $header-color;
+
   &.badge-pill {
     padding: 0.4em 0.6em;
     font-weight: 700;
@@ -131,6 +118,11 @@ legend {
   .list-group-item > & {
     margin-top: 2px;
   }
+}
+
+.badge-light,
+.badge-secondary {
+  color: $gray-300;
 }
 
 .table-no-border {
@@ -172,8 +164,8 @@ small {
 
 ///////// Buttons //////////
 
-.btn {
-  background-image: linear-gradient(to right, #ffffff26, #fff0);
+[class*="btn-outline"] {
+  background-image: none;
 }
 
 .btn-link {
@@ -182,29 +174,18 @@ small {
   }
 }
 
-.btn-secondary {
-  border-color: $gray-400;
-  color: $gray-800;
-}
+.btn {
 
-.btn-success,
-.btn-info,
-.btn-warning {
-  color: $white;
-
-  &:hover {
-    color: $white;
+  &,
+  &:hover,
+  &.disabled,
+  &:disabled {
+    color: $header-color;
   }
 }
 
-.btn-gray {
-  border-color: $gray-400;
-  color: $gray-700;
-}
-
 .btn-default {
-  border-color: $gray-400;
-  color: $gray-800;
+  border: none;
 }
 
 .btn-xs {
@@ -212,10 +193,6 @@ small {
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
-}
-
-.btn-secondary.active {
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .btn {
@@ -243,7 +220,7 @@ small {
 }
 
 .btn-outline {
-  @include button-variant(transparent, $white);
+  @include button-variant(transparent, $text-color);
 
   @include hover-focus() {
     background-color: rgba($white, 0.1);
@@ -266,14 +243,19 @@ small {
 }
 
 .dropdown-toggle::after {
-  font-family: LineAwesome;
-  content: "\F110";
+  font-family: 'Line Awesome Free';
+  content: "\F107";
   border: none;
   width: auto;
   height: auto;
   vertical-align: baseline;
   opacity: .8;
   font-size: 85%;
+  font-weight: $font-weight-semi-bold;
+}
+
+.dropdown-toggle-no-caret:after {
+  content: none;
 }
 
 .nav-item.dropdown {
@@ -312,7 +294,7 @@ small {
     font-size: 18px;
     text-shadow: none;
     opacity: 1;
-    color: #fff;
+    color: $text-color;
     outline: none;
     padding: 0;
     position: static;
@@ -327,70 +309,52 @@ small {
   border-radius: 50px;
 }
 
-.alert-success {
-  background: theme-color('success');
-  color: $white;
+@mixin alert($color) {
+  background: theme-color($color);
+  color: $header-color;
 
   &.alert-transparent {
-    color: theme-color('success');
-    background: rgba(theme-color('success'), $alert-transparent);
+    color: theme-color($color);
+    background: rgba(theme-color($color), $alert-transparent);
   }
 
   .btn:not(.btn-default) {
-    background: rgba($white, 0.8);
-    color: theme-color('success');
+    background: rgba($header-color, 0.8);
+    color: theme-color($color);
   }
+}
+
+.alert-success {
+  @include alert('success');
 }
 
 .alert-info {
-  background: theme-color('info');
-  color: $white;
-
-  &.alert-transparent {
-    color: theme-color('info');
-    background: rgba(theme-color('info'), $alert-transparent);
-  }
-
-  .btn:not(.btn-default) {
-    background: rgba($white, 0.8);
-    color: theme-color('info');
-  }
+  @include alert('info');
 }
 
 .alert-warning {
-  background: theme-color('warning');
-  color: $white;
-
-  &.alert-transparent {
-    color: theme-color('warning');
-    background: rgba(theme-color('warning'), $alert-transparent);
-  }
-
-  .btn:not(.btn-default) {
-    background: rgba($white, 0.8);
-    color: theme-color('warning');
-  }
+  @include alert('warning');
 }
 
 .alert-danger {
-  background: theme-color('danger');
-  color: $white;
+  @include alert('danger');
+}
 
-  &.alert-transparent {
-    color: theme-color('danger');
-    background: rgba(theme-color('danger'), $alert-transparent);
-  }
+.alert-default {
+  @include alert('default');
+}
 
-  .btn:not(.btn-default) {
-    background: rgba($white, 0.8);
-    color: theme-color('danger');
+///////// Jumbotron //////////
+.widget {
+  .jumbotron {
+    background: transparent;
   }
 }
 
 ///////// Breadcrumbs //////////
 
 .breadcrumb {
-  color: $gray-600;
+  color: $text-color;
   margin-bottom: 1.5rem;
   margin-top: 0;
 
@@ -407,13 +371,13 @@ small {
 
 .breadcrumb-item + .breadcrumb-item::before {
   content: '>';
-  color: $gray-600;
+  color: $text-color;
 }
 
 ///////// Glyphicons //////////
 
 .glyphicon {
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 ///////// Font Awesome //////////
@@ -494,6 +458,8 @@ h6,
 .h4,
 .h5,
 .h6 {
+  color: $header-color;
+
   small,
   .small {
     font-weight: $font-weight-thin;
@@ -514,10 +480,19 @@ h6,
   padding: 20px;
 }
 
-// Modal
+.popover-text-gray {
+  .popover-header,
+  .popover-body {
+    color: $gray-700;
+  }
+}
 
-.modal-body {
-  background: $gray-200;
+// Modals
+// -------------------------------------------------
+.modal {
+  .modal-footer, .modal-header {
+    border-width: $input-border-width;
+  }
 }
 
 // Navs
@@ -574,6 +549,24 @@ h6,
   }
 }
 
+.nav-pills {
+  padding: 0;
+
+  .nav-link {
+    color: transparentize($text-color, .3);
+
+    &:hover {
+      color: $nav-pills-link-active-color;
+    }
+
+    &.active {
+      font-weight: $font-weight-semi-bold;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
 .tab-content {
   position: relative;
   z-index: 1;
@@ -584,31 +577,15 @@ h6,
   }
 }
 
-//
-// Panels
-// --------------------------------------------------
-
-.panel {
-  background-color: transparent;
-  border: none;
-}
-
-.panel-header {
-  background-color: $gray-400;
-  color: $gray-800;
-  border-bottom: 1px solid transparent;
-
-  @include border-top-radius(($border-radius));
-}
-
 // Code
 // -----------------
 
 code {
   font-size: 85%;
-  background-color: theme-color('danger-light');
-  color: $pink;
-  padding: 0;
+  background-color: rgba($primary, .3);
+  border-radius: $border-radius-sm;
+  color: $success;
+  padding: $spacer / 10;
 }
 
 pre {
@@ -620,8 +597,8 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   color: $pre-color;
-  background-color: $gray-100;
-  border: 1px solid $gray-400;
+  background-color: $pre-bg;
+  border: 1px solid $pre-border;
   border-radius: $border-radius;
   white-space: pre-line;       /* css-3 */
   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */

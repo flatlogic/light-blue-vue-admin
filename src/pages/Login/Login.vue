@@ -3,14 +3,14 @@
     <b-container>
       <Widget class="widget-auth mx-auto" title="<h3 class='mt-0'>Login to your Web App</h3>" customHeader>
         <p class="widget-auth-info">
-            Use your email to sign in.
+          Use your email to sign in.
         </p>
         <form class="mt" @submit.prevent="login">
           <b-alert class="alert-sm" variant="danger" :show="!!errorMessage">
             {{errorMessage}}
           </b-alert>
           <b-form-group label="Email" label-for="email">
-            <b-input-group class="input-group-no-border">
+            <b-input-group>
               <b-input-group-text slot="prepend"><i class="la la-user text-white"></i></b-input-group-text>
               <input id="email"
                      ref="email"
@@ -21,7 +21,7 @@
             </b-input-group>
           </b-form-group>
           <b-form-group label="Password" label-for="password">
-            <b-input-group class="input-group-no-border">
+            <b-input-group>
               <b-input-group-text slot="prepend"><i class="la la-lock text-white"></i></b-input-group-text>
               <input id="password"
                      ref="password"

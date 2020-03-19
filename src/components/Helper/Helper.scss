@@ -42,7 +42,7 @@
     font-size: $font-size-lg * 1.4;
     line-height: initial;
     box-shadow: $widget-shadow-designated;
-    background: $widget-bg;
+    background: opacify($widget-bg, .1);
   }
 
   .theme-helper-header {
@@ -56,6 +56,7 @@
   .theme-helper-content {
     box-shadow: $widget-shadow-designated;
     border-radius: 0;
+    background: opacify($widget-bg, .1);
   }
 
   .theme-sharing, .theme-switcher {
@@ -89,4 +90,3 @@
     }
   }
 }
-  

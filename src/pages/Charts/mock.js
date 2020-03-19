@@ -1,8 +1,8 @@
 import Highcharts from 'highcharts';
 import config from '../../config';
-const colors = config.chartColors;
+const colors = config.colors;
 
-let columnColors = [colors.blue, colors.green, colors.orange, colors.red, colors.purple, colors.dark, colors.teal, colors.pink];
+let columnColors = [colors.blue, colors.green, colors.orange, colors.red, colors.default, colors.gray, colors.teal, colors.pink];
 let lineColors = [colors.blue, colors.green, colors.orange];
 
 export const chartData = {
@@ -33,6 +33,12 @@ export const chartData = {
               colors: columnColors,
               fontSize: '14px'
             }
+          },
+          axisBorder: {
+            show: false
+          },
+          axisTicks: {
+            show: false
           }
         },
         yaxis: {
@@ -44,6 +50,9 @@ export const chartData = {
         },
         tooltip: {
           theme: 'dark'
+        },
+        grid: {
+          borderColor: colors.gridLineColor
         }
       }
     },
@@ -56,6 +65,10 @@ export const chartData = {
             enabled: true,
             color: colors.blue,
           }
+        },
+        stroke: {
+          show: false,
+          width: 0
         },
         legend: false,
         responsive: [{
@@ -146,6 +159,11 @@ export const chartData = {
               color: colors.textColor
             }
           },
+          splitLine: {
+            lineStyle: {
+              color: colors.gridLineColor
+            }
+          },
           axisPointer: {
             label: {
               color: colors.dark
@@ -231,7 +249,7 @@ export const chartData = {
           color: colors.textColor
         }
       },
-      color: [colors.blue, colors.green, colors.orange, colors.red, colors.purple, colors.dark],
+      color: [colors.blue, colors.green, colors.orange, colors.red, colors.purple, colors.gray],
       singleAxis: {
         top: 50,
         bottom: 50,
@@ -250,6 +268,7 @@ export const chartData = {
         splitLine: {
           show: true,
           lineStyle: {
+            color: [colors.gridLineColor],
             type: 'dashed',
             opacity: 0.2
           }
@@ -324,14 +343,7 @@ export const chartData = {
         backgroundColor: 'transparent'
       },
       exporting: {
-        buttons: {
-          contextButton: {
-            symbolStroke: colors.textColor,
-            theme: {
-              fill: 'transparent'
-            }
-          }
-        }
+        enabled: false
       },
       title: {
         text: 'Snow depth at Vikjafjellet, Norway',
@@ -363,7 +375,8 @@ export const chartData = {
           style: {
             color: colors.textColor
           }
-        }
+        },
+        gridLineColor: colors.gridLineColor
       },
       tooltip: {
         headerFormat: '<b>{series.name}</b><br>',
@@ -380,7 +393,7 @@ export const chartData = {
           }
         }
       },
-      colors: [colors.orange, '#ffebb2', '#ffc0d9'],
+      colors: [colors.green, colors.blue, colors.red],
 
       series: [{
         name: "Winter 2014-2015",
@@ -544,7 +557,9 @@ export const liveChart = {
       style: {
         color: colors.textColor
       }
-    }
+    },
+    lineWidth: 0,
+    tickWidth: 0
   },
   yAxis: {
     title: {
@@ -559,7 +574,8 @@ export const liveChart = {
       style: {
         color: colors.textColor
       }
-    }
+    },
+    gridLineColor: colors.gridLineColor
   },
   tooltip: {
     headerFormat: '<b>{series.name}</b><br/>',

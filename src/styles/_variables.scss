@@ -12,7 +12,7 @@ $fa-font-path: '../fonts/font-awesome' !default;
 /*
  * Fonts
  * ======================================================================== */
-$font-size-initial:       13px; // reset default browser value from 16px to 14px
+$font-size-initial:       14px; // reset default browser value from 16px to 14px
 $font-size-base:          1rem !default;
 $font-size-lg:            1.25rem !default;
 $font-size-sm:            0.875rem !default;
@@ -28,7 +28,7 @@ $font-family-base: 'Open Sans', sans-serif;
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
-$gray-300: #d6dee5 !default;
+$gray-300: #595D78 !default;
 $gray-400: #c1ccd3 !default;
 $gray-500: #a3aeb7 !default;
 $gray-600: #798892 !default;
@@ -39,28 +39,31 @@ $black:    #000 !default;
 $gray-light: $gray-100 !default;
 
 $lime:     #8cbf26 !default;
-$red:      #ff0115 !default;
+$red:      #F45722 !default;
 $red-dark: #d04f4f !default;
-$blue:     #196EFF !default;
-$green: #2ada7a !default;
-$orange: #ffc107 !default;
+$blue:     #1870DC !default;
+$green:    #58D777 !default;
+$orange:   #f0af03 !default;
 $pink:     #e671b8 !default;
-$purple:   #a700ae !default;
+$purple:   #474D84 !default;
 $brown:    #a05000 !default;
-$teal:     #7f49fa !default;
+$teal:     #14d3d3 !default;
+$dark:     #040620 !default;
+$violet:   #333867 !default;
+$default:  #474D84 !default;
 
 $theme-colors: (
         primary: $blue,
-        secondary: $gray-700,
+        secondary: rgba(#F4F4F5, .9),
         success: $green,
         info: $teal,
         warning: $orange,
         danger: $red,
-        dark: $gray-700,
-        inverse: $gray-100,
+        dark: $dark,
+        inverse: #30314E,
         gray: $gray-300,
         light: $gray-100,
-        default: #e9ecef,
+        default: $default,
         primary-light: #dee4ee,
         success-light: #ecfaec,
         info-light: #f2fafa,
@@ -68,9 +71,12 @@ $theme-colors: (
         danger-light: #fff2ef,
 );
 
-$link-color: #62c9ff;
+$link-color: $blue;
 
-$text-color: #444 !default;
+$header-color: rgba(#F4F4F5, .9) !default;
+$text-color: rgba(#F4F4F5, .6) !default;
+$body-color: $text-color;
+$border-color: $dark !default;
 $text-muted: rgba($text-color, .7) !default;
 
 $font-weight-bold: 700 !default;
@@ -81,10 +87,11 @@ $font-weight-base: $font-weight-thin !default;
 
 $addition-bg: rgba($white, .1) !default;
 
-$body-bg: #e1e5e8 !default;
-$body-bg-gradient-start: $body-bg 10%;
-$body-bg-gradient-end: #9aacbf;
+$body-bg: $violet !default;
+$body-bg-gradient-start: $violet;
+$body-bg-gradient-end: #17193B;
 $body-bg-light: lighten($body-bg, 3%);
+$default-bg: radial-gradient(farthest-side ellipse at 10% 0, $body-bg-gradient-start, $body-bg-gradient-end);
 
 $headings-font-weight: 300;
 
@@ -105,7 +112,7 @@ $border-radius-sm:       0.25rem !default;
 //== Sidebar
 //
 
-$sidebar-width: 160px;
+$sidebar-width: 200px;
 $sidebar-transition-time: 0.3s !default;
 
 $sidebar-color: $text-color !default;
@@ -116,9 +123,8 @@ $sidebar-item-active-color: #fff !default;
 
 // Widgets
 // -------------------------
-//$widget-bg: rgba(0,0,0,.24);
-$widget-bg: rgba(255,255,255,.33);
-$widget-title-color: $text-color;
+$widget-bg: rgba(0,0,0,.24);
+$widget-title-color: #fff;
 $widget-shadow: 0 23px 20px -20px rgba(darken($body-bg, 25%),0.1), 0 0 15px rgba(darken($body-bg, 25%),0.06);
 $widget-shadow-designated: -1px 0 8px rgba(0,0,0,.2);
 $widget-border-radius: 10px;
@@ -154,15 +160,25 @@ $navbar-link-disabled-bg: transparent !default;
 $dropdown-item-padding-y: 0.5rem;
 $dropdown-link-color: $text-color;
 $dropdown-border-radius: $widget-border-radius;
+$dropdown-divider-bg: $text-color;
+$dropdown-bg: rgba(0, 0, 0, .8);
+$dropdown-link-hover-bg: $text-color;
 
 //== Navs
 //
 $nav-tabs-active-link-hover-bg: $widget-bg !default;
-$nav-tabs-active-link-hover-color: $gray-700 !default;
+$nav-tabs-active-link-hover-color: $text-color !default;
+
+$nav-pills-link-active-color: transparentize($text-color, .7);
+$nav-pills-link-active-color: $text-color;
+$nav-pills-link-active-bg: $widget-bg;
 
 //== Forms
 //
 $input-focus-border-color: #4d90fe !default; //webkit focus color
+$input-bg: $dark !default;
+$input-border-width: 0 !default;
+$input-group-addon-bg: $default !default;
 
 //*  Popover  */
 $popover-bg: #ebeff1 !default;
@@ -174,6 +190,9 @@ $badge-font-weight: 700;
 $badge-font-size: 0.875em;
 $badge-padding-y: 0.4em;
 $badge-padding-x: 0.4em;
+
+// Jumbotron
+$jumbotron-bg: $widget-bg;
 
 // Breadcrumbs
 
@@ -191,8 +210,8 @@ $progress-box-shadow: none;
 $alert-transparent: 0.25;
 
 // Buttons
-$input-btn-padding-y: 0.5rem !default;
-$input-btn-padding-x: .75rem !default;
+$input-btn-padding-y:       0.5rem !default;
+$input-btn-padding-x:       .75rem !default;
 
 $btn-default-bg: $addition-bg !default;
 $btn-default-border: $addition-bg !default;
@@ -201,27 +220,48 @@ $btn-default-border: $addition-bg !default;
 $table-border-width: 1px;
 
 // Pagination
-$pagination-color:                     $gray-700 !default;
-$pagination-bg:                        #fff !default;
+$pagination-color:                     $text-color !default;
+$pagination-bg:                        $addition-bg !default;
 $pagination-border:                    transparent !default;
 
-$pagination-hover-color:               $gray-700 !default;
+$pagination-hover-color:               $text-color !default;
 $pagination-hover-bg:                  transparent !default;
 $pagination-hover-border:              transparent !default;
 $pagination-hover-border-color:        transparent !default;
 
-$pagination-active-color:              $gray-700 !default;
+$pagination-active-color:              $text-color !default;
 $pagination-active-bg:                 transparent !default;
 $pagination-active-border:             transparent !default;
 $pagination-active-border-color:       transparent !default;
 
-$pagination-disabled-color:            $gray-700 !default;
-$pagination-disabled-bg:               #fff !default;
+$pagination-disabled-color:            $text-muted !default;
+$pagination-disabled-bg:               transparent !default;
 $pagination-disabled-border:           transparent !default;
 
 // == Components
 $padding-small-vertical:    0.25rem !default;
 $padding-small-horizontal:  0.75rem !default;
+
+// == Cards
+$card-cap-bg:               transparent;
+$card-bg:                   $widget-bg;
+$card-border-width:         0;
+
+// == Modals
+
+//$modal-content-color: $gray-700;
+$modal-content-bg: darken($default, 20%) !default;
+$close-color: $text-color !default;
+
+// == Code
+$pre-color: $text-color !default;
+$pre-bg: $dark !default;
+$pre-border: transparent !default;
+
+// == Location Selector
+$location-selector-bg: $dark !default;
+$location-selector-border: transparent !default;
+$location-selector-bit-bg: rgba(255, 255, 255, 0.2) !default;
 
 // Screens
 // -------------------------

@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard-page">
+  <div class="visits-page">
     <h1 class="page-title">Dashboard &nbsp;
       <small>
         <small>The Lucky One</small>
@@ -19,14 +19,14 @@
         >
           <p>Status: <strong>Live</strong></p>
           <p>
-            <span class="circle bg-warning text-white"><i class="fa fa-map-marker" /></span> &nbsp;
+            <span class="circle bg-primary text-white"><i class="la la-map-marker" /></span> &nbsp;
             146 Countries, 2759 Cities
           </p>
           <div class="row progress-stats">
             <div class="col-md-9 col-12">
               <h6 class="name">Foreign Visits</h6>
               <p class="description deemphasize mb-xs">Some Cool Text</p>
-              <b-progress variant="primary" :value="60" :max="100" class="bg-white progress-xs" />
+              <b-progress variant="primary" :value="60" :max="100" class="progress-xs" />
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-widget">
@@ -38,7 +38,7 @@
             <div class="col-md-9 col-12">
               <h6 class="name">Local Visits</h6>
               <p class="description deemphasize mb-xs">P. to C. Conversion</p>
-              <b-progress variant="danger" :value="39" :max="100" class="bg-white progress-xs" />
+              <b-progress variant="danger" :value="39" :max="100" class="progress-xs" />
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-widget">
@@ -50,7 +50,7 @@
             <div class="col-md-9 col-12">
               <h6 class="name">Sound Frequencies</h6>
               <p class="description deemphasize mb-xs">Average Bitrate</p>
-              <b-progress variant="success" :value="80" :max="100" class="bg-white progress-xs" />
+              <b-progress variant="success" :value="80" :max="100" class="progress-xs" />
             </div>
             <div class="col-md-3 col-12 text-center">
               <span class="status rounded rounded-lg bg-widget">
@@ -61,14 +61,14 @@
           <h6 class="fw-semi-bold mt">Map Distributions</h6>
           <p>Tracking: <strong>Active</strong></p>
           <p>
-            <span class="circle bg-warning text-white"><i class="fa fa-cog" /></span>
+            <span class="circle bg-primary text-white"><i class="la la-cog" /></span>
             &nbsp; 391 elements installed, 84 sets
           </p>
           <b-input-group class="mt">
-            <b-form-input />
+            <b-form-input placeholder="Search..." />
             <b-input-group-append>
               <b-btn variant="default">
-                <i class="fa fa-search text-gray" />
+                <i class="la la-search" />
               </b-btn>
             </b-input-group-append>
           </b-input-group>
@@ -96,11 +96,11 @@
             </div>
           </div>
           <b-progress variant="success" :value="60"
-            :max="100" class="bg-gray-lighter progress-xs" />
+            :max="100" class="progress-xs" />
           <p>
             <small>
-              <span class="circle bg-warning text-white">
-                <i class="fa fa-chevron-up" />
+              <span class="circle bg-primary text-white">
+                <i class="la la-angle-up" />
               </span>
             </small>
             <span class="fw-semi-bold">&nbsp;17% higher</span>
@@ -128,11 +128,11 @@
             </div>
           </div>
           <b-progress variant="danger"
-            :value="60" :max="100" class="bg-gray-lighter progress-xs" />
+            :value="60" :max="100" class="progress-xs" />
           <p>
             <small>
-              <span class="circle bg-warning text-white">
-                <i class="fa fa-chevron-down" />
+              <span class="circle bg-primary text-white">
+                <i class="la la-angle-down" />
               </span>
             </small>
             <span class="fw-semi-bold">&nbsp;8% lower</span>
@@ -160,11 +160,11 @@
             </div>
           </div>
           <b-progress variant="primary" :value="60"
-            :max="100" class="bg-gray-lighter progress-xs" />
+            :max="100" class="progress-xs" />
           <p>
             <small>
-              <span class="circle bg-warning text-white">
-                <i class="fa fa-plus" />
+              <span class="circle bg-primary text-white">
+                <i class="la la-plus" />
               </span>
             </small>
             <span class="fw-semi-bold">&nbsp;8 734 higher</span>
@@ -208,7 +208,7 @@
               <a class="list-group-item" href="#">
                 <span class="thumb-sm float-left mr">
                   <img class="rounded-circle" src="../../assets/people/a1.jpg" alt="..." />
-                  <i class="status status-bottom bg-warning" />
+                  <i class="status status-bottom bg-primary" />
                 </span>
                 <div>
                   <h6 class="m-0">Livia Walsh</h6>
@@ -309,11 +309,10 @@
         <Widget
           title="<h6>Calendar</h6" bodyClass="p-0"
           settings close customHeader>
-          <v-calendar class="v-calendar" :attributes='calendarAttributes'>
-          </v-calendar>
+          <Calendar />
           <div class="list-group fs-mini">
             <a href="#" class="list-group-item text-ellipsis">
-              <span class="badge badge-pill badge-warning float-right">6:45</span>
+              <span class="badge badge-pill bg-primary float-right">6:45</span>
               Weed out the flower bed
             </a>
             <a href="#" class="list-group-item text-ellipsis">
@@ -331,37 +330,14 @@
 import Vue from 'vue';
 import Widget from '@/components/Widget/Widget';
 import Map from './components/Map/Map';
-import AnimatedNumber from "animated-number-vue";
+import Calendar from './components/Calendar/Calendar';
 import AreaChart from './components/AreaChart/AreaChart';
-
-const todos = [
-  {
-    description: 'Take Sebastian to basketball practice.',
-    isComplete: false,
-    dates: { weekdays: 6, weeklyInterval: 2 }, // Every other Friday
-    color: '#ff8080',       // Red
-  },
-  {
-    description: 'German courses',
-    isComplete: false,
-    dates: new Date(),
-    color: '#64a4ff',       // Red
-  },
-  {
-    description: 'Constitution Day',
-    isComplete: false,
-    dates: new Date(Date.now() + 6*24*60*60*1000), // in 6 days
-    color: '#6ae696',       // Red
-  },
-];
+import AnimatedNumber from "animated-number-vue";
 
 export default {
-  name: 'Dashboard',
+  name: 'Visits',
   components: {
-    Widget,
-    Map,
-    AnimatedNumber,
-    AreaChart
+    Widget, Map, Calendar, AreaChart, AnimatedNumber
   },
   data() {
     return {
@@ -374,11 +350,7 @@ export default {
       },
       checkedArr: [false, false, false],
       dataCollection: null,
-      todos
     };
-  },
-  mounted () {
-    this.fillData();
   },
   methods: {
     checkTable(id) {
@@ -411,12 +383,12 @@ export default {
         datasets: [
           {
             label: 'Data One',
-            backgroundColor: '#f87979',
+            backgroundColor: '#1870DC',
             borderColor: 'transparent',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }, {
             label: 'Data Two',
-            backgroundColor: '#7c87f8',
+            backgroundColor: '#F45722',
             borderColor: 'transparent',
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }
@@ -427,32 +399,10 @@ export default {
       return Math.floor(Math.random() * (50 - 5 + 1)) + 5
     }
   },
-  computed: {
-    calendarAttributes() {
-      return [
-        // Today attribute
-        {
-          contentStyle: {
-            fontWeight: '700',
-            fontSize: '.9rem',
-          },
-          dates: new Date(),
-        },
-        // Attributes for todos
-        ...this.todos.map(todo => ({
-          dates: todo.dates,
-          dot: {
-            backgroundColor: todo.color,
-            opacity: todo.isComplete ? 0.3 : 1,
-          },
-          popover: {
-            label: todo.description,
-          },
-        })),
-      ];
-    },
-  }
+  mounted () {
+    this.fillData();
+  },
 };
 </script>
 
-<style src="./Dashboard.scss" lang="scss" />
+<style src="./Visits.scss" lang="scss" />

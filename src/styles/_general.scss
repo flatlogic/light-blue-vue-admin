@@ -10,7 +10,7 @@ html, body {
 body {
   overflow-x: hidden;
   color: $text-color;
-  background: url('../assets/bg-pattern.svg'), radial-gradient(farthest-side ellipse at 10% 0,$body-bg-gradient-start, $body-bg-gradient-end);
+  background: $default-bg;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;

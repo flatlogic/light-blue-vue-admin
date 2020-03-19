@@ -22,10 +22,12 @@
 
   > a,
   > div a {
+    align-items: center;
     position: relative;
     padding-left: 50px;
     line-height: 35px;
     border-top: 1px solid $sidebar-item-border-color;
+    border-radius: $border-radius;
 
     > i {
       margin-right: 7px;
@@ -37,7 +39,7 @@
     }
 
     &:hover {
-      font-weight: $font-weight-semi-bold;
+      background-color: $addition-bg;
     }
   }
 
@@ -62,19 +64,22 @@
   .badge {
     float: right;
     line-height: 8px;
-    margin-top: 16px;
+    margin-top: 6px;
     margin-right: 15px;
     padding: 7px;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
+      margin-top: 16px;
+    }
   }
 }
 
 .nav-link-nested > a {
-  line-height: 40px !important;
+  line-height: 32px !important;
 }
 
 .headerLabel {
   font-weight: 600;
-  color: theme-color('warning');
 }
 
 .caretWrapper {
@@ -95,6 +100,7 @@
 a.router-link-active {
   &,
   &:hover {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-bold !important;
+    color: $header-color;
   }
 }

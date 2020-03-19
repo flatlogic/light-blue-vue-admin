@@ -17,7 +17,6 @@
   .errorCode {
     margin: 20px;
     font-size: 80px;
-    color: $text-color;
 
     @include media-breakpoint-up(md) {
       font-size: 180px;
@@ -26,7 +25,6 @@
 
   .errorInfo {
     font-size: 20px;
-    color: $gray-800;
   }
 
   .errorHelp {

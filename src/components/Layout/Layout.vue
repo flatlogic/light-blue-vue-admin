@@ -3,7 +3,7 @@
   <Helper />
   <Header />
   <Sidebar />
-  <div class="content animated fadeInUp">
+  <div ref="content" class="content animated fadeInUp">
     <transition name="router-animation">
       <router-view />
     </transition>
@@ -38,6 +38,12 @@ export default {
   },
   created() {
   },
+  mounted() {
+    this.$refs.content.addEventListener('animationend', () => {
+      this.$refs.content.classList.remove('animated');
+      this.$refs.content.classList.remove('fadeInUp');
+    });
+  }
 };
 </script>
 

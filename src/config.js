@@ -1,16 +1,21 @@
-const chartColors = {
-  blue: '#196EFF',
-  green: '#2ada7a',
-  orange: '#ffc107',
-  red: '#ff0115',
-  purple: '#a700ae',
-  dark: '#3c484f',
-  teal: '#7f49fa',
+const colors = {
+  blue: '#1870DC',
+  green: '#58D777',
+  orange: '#f0af03',
+  red: '#F45722',
+  purple: '#474D84',
+  dark: '#040620',
+  teal: '#14d3d3',
   pink: '#e671b8',
   gray: '#d6dee5',
-  textColor: '#444'
+  default: '#595d78',
+  textColor: '#b4b5bf',
+  gridLineColor: '#040620'
 };
 
 export default {
-  chartColors,
+  colors: {
+    ...colors,
+    white: "#fff"
+  },
 };

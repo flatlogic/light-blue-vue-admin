@@ -4,6 +4,10 @@
   height: 100%;
   @include media-breakpoint-up('md') {
     margin-left: $sidebar-width;
+
+    @media print {
+      margin-left: 0;
+    }
   }
 }
 
@@ -28,8 +32,4 @@
   bottom: 15px;
   color: $text-muted;
   padding: 0 $content-padding;
-
-  a {
-    color: $white;
-  }
 }

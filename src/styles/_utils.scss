@@ -43,19 +43,22 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 .circle,
 .rounded,
 .circle-o {
-  display: inline-block;
   width: #{$line-height-base}em;
   height: #{$line-height-base}em;
-  line-height: #{$line-height-base}em;
-  text-align: center;
 }
 
 .circle,
 .circle-o {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   @include border-radius(50%);
 }
 
 .rounded {
+  display: inline-block;
+  line-height: #{$line-height-base}em;
+  text-align: center;
   @include border-radius(5px);
 }
 
@@ -113,7 +116,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
     display: inline-block;
     width: 0.7em;
     height: 0.7em;
-    border: 0.15em solid $white;
 
     @include border-radius(50%);
 
@@ -143,7 +145,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   }
 }
 
-@include bg-variant('.bg-dark', $text-color);
 @include bg-variant('.bg-widget', $widget-bg);
 
 
@@ -211,15 +212,16 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include bg-variant('.bg-gray-lighter', $gray-200);
 @include bg-variant('.bg-transparent', rgba(0,0,0,0));
 @include bg-variant('.bg-white', $white);
+@include bg-variant('.bg-addition', $addition-bg);
 
 .bg-body,
 .bg-body-light,
 .bg-gray,
 .bg-gray-transparent,
 .bg-transparent,
-.bg-primary,
-.bg-success,
 .bg-warning,
+.bg-success,
+.bg-primary,
 .bg-danger,
 .bg-info {
   @include transition(background-color 0.15s ease-in-out);
@@ -240,6 +242,8 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include text-emphasis-variant('.text-semi-muted', $gray-600);
 @include text-emphasis-variant('.text-gray-darker', $gray-900);
 @include text-emphasis-variant('.text-gray-lighter', $gray-200);
+@include text-emphasis-variant('.text-color', $text-color);
+@include text-emphasis-variant('.header-color', $header-color);
 
 .text-ellipsis {
   display: block;
@@ -308,7 +312,6 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .help-block {
-  margin-top: 5px;
   font-size: $font-size-mini;
   color: $text-muted;
   display: block;
@@ -333,9 +336,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 }
 
 .thin-scroll {
+  overflow: auto;
+
   &::-webkit-scrollbar {
     height: 8px;
-    width: 8px;
+    width: 4px;
   }
 
   &::-webkit-scrollbar:hover {
@@ -345,13 +350,17 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 
   &::-webkit-scrollbar-thumb {
     border: none;
-    background-color: rgba(0, 0, 0, 0.2);
-
-    @include box-shadow(inset 1px 1px 0 rgba(0, 0, 0, 0.1));
+    transition: background-color .2s ease;
   }
 
   &::-webkit-scrollbar-thumb:hover {
     background-color: $gray-600;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 }
 
@@ -396,14 +405,18 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
     background-color: opacify($widget-bg, 0.05);
     border-color: $widget-bg;
   }
+
+  &:disabled {
+    background-color: opacify($widget-bg, 0.05);
+  }
 }
 
 .input-group-transparent {
-  .form-control:first-child,
-  .input-group-addon:first-child,
-  .input-group-btn:first-child > .btn,
-  .input-group-btn:first-child > .btn-group > .btn,
-  .input-group-btn:first-child > .dropdown-toggle,
+  .form-control:not(:last-child),
+  .input-group-addon:not(:last-child),
+  .input-group-btn:not(:last-child) > .btn,
+  .input-group-btn:not(:last-child) > .btn-group > .btn,
+  .input-group-btn:not(:last-child) > .dropdown-toggle,
   .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
   .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
     border-top-right-radius: 0;
@@ -411,11 +424,11 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
     border-right: none;
   }
 
-  .form-control:last-child,
-  .input-group-addon:last-child,
-  .input-group-btn:last-child > .btn,
-  .input-group-btn:last-child > .btn-group > .btn,
-  .input-group-btn:last-child > .dropdown-toggle,
+  .form-control:not(:first-child),
+  .input-group-addon:not(:first-child),
+  .input-group-btn:not(:first-child) > .btn,
+  .input-group-btn:not(:first-child) > .btn-group > .btn,
+  .input-group-btn:not(:first-child) > .dropdown-toggle,
   .input-group-btn:first-child > .btn:not(:first-child),
   .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
     border-top-left-radius: 0;
@@ -438,9 +451,10 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
     background-color: $widget-bg;
     border-color: transparentize($widget-bg, 0.15);
     border-right: none;
+    border-left: none;
   }
 
-  .form-control.input-transparent:focus {
+  .input-transparent:focus {
     background-color: $widget-bg;
     border-color: transparentize($widget-bg, 0.15);
   }
@@ -448,30 +462,13 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
   .input-group-prepend {
     margin-right: 0;
   }
-}
 
-.input-no-border {
-  border: none;
-
-  @include transition(background-color ease-in-out 0.15s);
-
-  &:focus {
-    background-color: $gray-100;
-  }
-}
-
-.input-group-no-border {
-  @extend .input-group-transparent;
-
-  .form-control,
-  .input-group-addon {
-    @extend .input-no-border;
+  .input-group-append {
+    margin-left: 0;
   }
 
-  .form-control:focus,
-  .form-control:focus + .input-group-addon,
-  &.focus .input-group-addon {
-    @extend .input-no-border:focus;
+  .input-transparent:not(:first-child) {
+    padding-left: 0;
   }
 }
 

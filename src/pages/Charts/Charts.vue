@@ -106,7 +106,6 @@ import Widget from "@/components/Widget/Widget";
 import {chartData, liveChart, liveChartInterval} from './mock';
 
 import ECharts from 'vue-echarts/components/ECharts';
-import 'echarts/lib/chart/pie';
 import 'echarts/lib/chart/line';
 import 'echarts/lib/chart/themeRiver';
 import 'echarts/lib/component/tooltip';
@@ -131,11 +130,15 @@ export default {
       ld: liveChart,
       initEchartsOptions: {
         renderer: 'canvas'
-      },
-      sparklineData: {
-        series: [{data: [1,7,3,5,7,8]}],
+      }
+    };
+  },
+  computed: {
+    sparklineData() {
+      return {
+        series: [{data: [1, 7, 3, 5, 7, 8]}],
         options1: {
-          colors: ['#f0af03'],
+          colors: [this.appConfig.colors.green],
           plotOptions: {
             bar: {
               columnWidth: '50%'
@@ -143,7 +146,7 @@ export default {
           }
         },
         options2: {
-          colors: ['#ffc0d9'],
+          colors: [this.appConfig.colors.red],
           plotOptions: {
             bar: {
               columnWidth: '50%'
@@ -151,7 +154,7 @@ export default {
           }
         }
       }
-    };
+    }
   },
   beforeDestroy() {
     clearInterval(liveChartInterval);

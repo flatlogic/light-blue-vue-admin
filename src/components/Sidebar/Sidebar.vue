@@ -112,7 +112,7 @@ export default {
           title: 'Sales Report',
           value: 15,
           footer: 'Calculating x-axis bias... 65%',
-          color: 'info',
+          color: 'primary',
         },
         {
           id: 1,

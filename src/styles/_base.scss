@@ -97,7 +97,7 @@
 }
 
 .table-bordered th {
-  background-color: $gray-300;
+  background-color: $addition-bg;
 }
 
 table > thead > tr > th {
@@ -128,6 +128,8 @@ table > thead > tr > th {
 
 /* --------- Stats Row --------- */
 .stats-row {
+  display: flex;
+  align-items: center;
   margin-bottom: 1.25rem;
 }
 

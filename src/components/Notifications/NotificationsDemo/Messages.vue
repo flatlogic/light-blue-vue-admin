@@ -1,6 +1,6 @@
 <template>
   <b-list-group class="listGroup thin-scroll">
-    <b-list-group-item class="listGroupItem bg-warning-light">
+    <b-list-group-item class="listGroupItem bg-primary-light">
       <span class="notificationIcon thumb-sm">
         <img class="rounded-circle" src="../../../assets/people/a2.jpg" alt="..." />
         <i class="status status-bottom bg-success" />

@@ -57,6 +57,9 @@
     margin: 0;
     z-index: 10000;
 
+    border-radius: 0;
+    background: $default-bg;
+
     [control='fullscreen'] {
       display: none;
     }
@@ -144,29 +147,8 @@
     @include transition(color 0.15s ease-in-out);
 
     &:hover {
-      color: rgba($black, 0.1);
+      color: rgba($widget-title-color, 0.5);
       text-decoration: none;
-    }
-
-    .la {
-      position: relative;
-      top: 2px;
-    }
-
-    .glyphicon {
-      font-size: 0.7rem;
-    }
-  }
-}
-
-.inverse {
-  top: 2px;
-  position: relative;
-  margin-left: 3px;
-
-  :global {
-    .glyphicon {
-      vertical-align: baseline;
     }
   }
 }
@@ -266,7 +248,6 @@
   }
 
   .widget-icon {
-    opacity: 0.5;
     font-size: 42px;
     height: 60px;
     line-height: 45px;

@@ -21,7 +21,7 @@
   transition: width $sidebar-transition-time ease-in-out;
 
   a {
-    color: $text-color;
+    color: $header-color;
     padding: 0 5px;
     text-decoration: none;
     white-space: nowrap;
@@ -112,5 +112,11 @@
 .sidebar-collapse {
   @media (min-width: breakpoint-min('md')) {
     display: block !important;
+
+    @media print {
+      display: none !important;
+    }
   }
+
+
 }

@@ -11,7 +11,7 @@
     <div v-if="!customControls && mainControls"
       class="widgetControls widget-controls">
       <a v-if="settings" href="#"><i class="la la-cog" /></a>
-      <a v-if="settingsInverse" href="#" class="bg-gray-transparent inverse">
+      <a v-if="settingsInverse" href="#" class="bg-default mx-2">
         <i class="la la-cog text-white"/>
       </a>
       <a @click="loadWidgster($event)" v-if="refresh" href="#" :id="`reloadId-${randomId}`">
@@ -25,7 +25,7 @@
           </b-tooltip>
       </a>
       <a @click="changeState($event, 'fullscreen')" v-if="fullscreen && state !== 'fullscreen'" href="#" :id="`fullscreenId-${randomId}`">
-        <i class="glyphicon glyphicon-resize-full"></i>
+        <i class="la la-expand"></i>
         <b-tooltip
           v-if="showTooltip"
           :placement="tooltipPlacement"
@@ -34,7 +34,7 @@
         </b-tooltip>
       </a>
       <a @click="changeState($event, 'default')" v-if="fullscreen && state === 'fullscreen'" href="#" :id="`restoreId-${randomId}`">
-        <i class="glyphicon glyphicon-resize-small"></i>
+        <i class="la la-compress"></i>
         <b-tooltip
           v-if="showTooltip"
           :placement="tooltipPlacement"
