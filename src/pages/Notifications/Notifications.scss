@@ -3,21 +3,21 @@
 .location-selector {
   width: 100%;
   height: 220px;
-  border: 1px dashed #bbb;
-  background-color: $white;
+  border: 1px dashed $location-selector-border;
+  background-color: $location-selector-bg;
   position: relative;
 }
 
 .location-selector .bit {
   @include transition(background-color 0.15s ease-in-out);
 
-  background-color: $gray-400;
+  background-color: $location-selector-bit-bg;
   cursor: pointer;
   position: absolute;
 }
 
 .location-selector .bit:hover {
-  background-color: $gray-600;
+  background-color: darken($location-selector-bit-bg, 20%);
 }
 
 .location-selector .bit.top,
