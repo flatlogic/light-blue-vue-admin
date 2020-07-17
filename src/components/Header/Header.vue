@@ -2,7 +2,7 @@
   <b-navbar toggleable="md" class="app-header d-print-none">
     <b-navbar-nav class="navbar-nav-mobile ml-auto">
         <b-nav-text class="mr-3">
-          <b-alert class="header-alert animated bounceIn delay-2s" dismissible v-model="showNavbarAlert">
+          <b-alert class="header-alert animate__animated animate__bounceIn animate__delay-2s" dismissible v-model="showNavbarAlert">
             <i class="fa fa-info-circle mr-1"></i> Check out Light Blue Settings on the right!
           </b-alert>
         </b-nav-text>
@@ -66,7 +66,7 @@
           <b-dropdown-divider />
           <b-dropdown-item>Calendar</b-dropdown-item>
           <b-dropdown-item>
-            Inbox &nbsp;&nbsp;<b-badge variant="danger" pill class="animated bounceIn">9</b-badge>
+            Inbox &nbsp;&nbsp;<b-badge variant="danger" pill class="animate__animated animate__bounceIn">9</b-badge>
           </b-dropdown-item>
           <b-dropdown-divider />
           <b-dropdown-item-button @click="logout">

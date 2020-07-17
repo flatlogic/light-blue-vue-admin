@@ -18,13 +18,13 @@
                     class="btn btn-warning btn-rounded-f btn-block fs-mini text-white">
                         Purchase
                     </a>
-                    <a href="https://demo.flatlogic.com/light-blue-vue/white"
+                    <a href="https://demo.flatlogic.com/light-blue-vue/"
                        target="_blank"
                        role="button"
                        class="btn btn-danger btn-rounded-f btn-block fs-mini text-white">
                         Go FULL Version
                     </a>
-                    <a href="https://demo.flatlogic.com/light-blue-vue/white/#/documentation"
+                    <a href="https://demo.flatlogic.com/light-blue/documentation/"
                     target="_blank"
                     role="button"
                     class="btn btn-inverse btn-rounded-f btn-block fs-mini">
@@ -41,7 +41,7 @@
                     </a>
                     <a role="button"
                     target="_blank"
-                    href="https://github.com/flatlogic/light-blue-vue-lite"
+                    href="https://github.com/flatlogic/light-blue-vue"
                     class="btn btn-outline-default btn-rounded-f fs-mini text-muted d-flex align-items-center">
                         <i class="fa fa-github mr-xs"></i>
                         Github
