@@ -8,7 +8,7 @@
       Typography - <span class="fw-semi-bold">Texts & Display</span>
     </h1>
     <b-row>
-      <b-col xs="12" md="6">
+      <b-col xs="12" lg="6">
         <Widget
           title="<h5>Headings <small class='text-muted'>Default and customized</small></h5>"
           customHeader close collapse
@@ -57,7 +57,7 @@
           </div>
         </Widget>
       </b-col>
-      <b-col xs="12" md="6">
+      <b-col xs="12" lg="6">
         <Widget
           title="<h5>Body texts <small className='text-muted'>Variations</small></h5>"
           customHeader close collapse

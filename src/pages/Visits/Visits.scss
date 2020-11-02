@@ -18,4 +18,15 @@
       }
     }
   }
+
+  .market-stats {
+    .abc-checkbox label {
+      &::before {
+        background-color: transparent;
+      }
+      &::after {
+        color: #eee;
+      }
+    }
+  }
 }

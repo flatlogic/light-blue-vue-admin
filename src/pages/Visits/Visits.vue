@@ -23,37 +23,37 @@
             146 Countries, 2759 Cities
           </p>
           <div class="row progress-stats">
-            <div class="col-md-9 col-12">
+            <div class="col-9">
               <h6 class="name">Foreign Visits</h6>
               <p class="description deemphasize mb-xs">Some Cool Text</p>
               <b-progress variant="primary" :value="60" :max="100" class="progress-xs" />
             </div>
-            <div class="col-md-3 col-12 text-center">
-              <span class="status rounded rounded-lg bg-widget">
+            <div class="col-3 text-center">
+              <span class="status rounded rounded-lg bg-widget mt-lg-0 mt-4">
                 <span><AnimatedNumber :value="75" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
           <div class="row progress-stats">
-            <div class="col-md-9 col-12">
+            <div class="col-9">
               <h6 class="name">Local Visits</h6>
               <p class="description deemphasize mb-xs">P. to C. Conversion</p>
               <b-progress variant="danger" :value="39" :max="100" class="progress-xs" />
             </div>
-            <div class="col-md-3 col-12 text-center">
-              <span class="status rounded rounded-lg bg-widget">
+            <div class="col-3 text-center">
+              <span class="status rounded rounded-lg bg-widget mt-lg-0 mt-4">
                 <span><AnimatedNumber :value="84" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
           </div>
           <div class="row progress-stats">
-            <div class="col-md-9 col-12">
+            <div class="col-9">
               <h6 class="name">Sound Frequencies</h6>
               <p class="description deemphasize mb-xs">Average Bitrate</p>
               <b-progress variant="success" :value="80" :max="100" class="progress-xs" />
             </div>
-            <div class="col-md-3 col-12 text-center">
-              <span class="status rounded rounded-lg bg-widget">
+            <div class="col-3 text-center">
+              <span class="status rounded rounded-lg bg-widget mt-lg-0 mt-4">
                 <span><AnimatedNumber :value="92" v-bind="animateNumberOptions"></AnimatedNumber>%</span>
               </span>
             </div>
@@ -76,7 +76,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col lg="4" xs="12">
+      <b-col xl="4" xs="12">
         <Widget
           title="<h6> USERBASE GROWTH </h6>"
           close settings customHeader
@@ -99,7 +99,7 @@
             :max="100" class="progress-xs" />
           <p>
             <small>
-              <span class="circle bg-primary text-white">
+              <span class="circle bg-primary text-white mr-2">
                 <i class="la la-angle-up" />
               </span>
             </small>
@@ -108,7 +108,7 @@
           </p>
         </Widget>
       </b-col>
-      <b-col lg="4" xs="12">
+      <b-col xl="4" xs="12">
         <Widget
           title="<h6> TRAFFIC VALUES </h6>"
           close settings customHeader
@@ -131,7 +131,7 @@
             :value="60" :max="100" class="progress-xs" />
           <p>
             <small>
-              <span class="circle bg-primary text-white">
+              <span class="circle bg-primary text-white mr-2">
                 <i class="la la-angle-down" />
               </span>
             </small>
@@ -140,7 +140,7 @@
           </p>
         </Widget>
       </b-col>
-      <b-col lg="4" xs="12">
+      <b-col xl="4" xs="12">
         <Widget
           title="<h6> RANDOM VALUES </h6>"
           close settings customHeader
@@ -163,7 +163,7 @@
             :max="100" class="progress-xs" />
           <p>
             <small>
-              <span class="circle bg-primary text-white">
+              <span class="circle bg-primary text-white mr-2">
                 <i class="la la-plus" />
               </span>
             </small>
@@ -176,7 +176,7 @@
     <b-row>
       <b-col lg="4" xs="12">
         <Widget
-          title="<h6><span class='badge badge-danger'>New</span> Messages</h6>"
+          title="<h6><span class='badge badge-danger mr-2'>New</span> Messages</h6>"
           refresh close customHeader
         >
           <div class="widget-body p-0">
@@ -245,7 +245,7 @@
             </p>
           </div>
           <div class="widget-bottom-overflow">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped table-sm market-stats">
               <thead class="no-bd">
                 <tr>
                   <th>

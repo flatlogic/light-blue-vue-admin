@@ -22,8 +22,7 @@ $font-size-index:         0.7rem;
 
 $font-family-base: 'Open Sans', sans-serif;
 
-// Color system
-//
+// Color system //
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -37,17 +36,18 @@ $gray-800: #3c484f !default;
 $gray-900: #29323a !default;
 $black:    #000 !default;
 $gray-light: $gray-100 !default;
+$progress-bg: #30314e !default;
 
 $lime:     #8cbf26 !default;
-$red:      #F45722 !default;
+$red:      #DB2A34 !default;
 $red-dark: #d04f4f !default;
-$blue:     #1870DC !default;
-$green:    #58D777 !default;
-$orange:   #f0af03 !default;
+$blue:     #2477FF !default;
+$green:    #2D8515 !default;
+$orange:   #E49400 !default;
 $pink:     #e671b8 !default;
 $purple:   #474D84 !default;
 $brown:    #a05000 !default;
-$teal:     #14d3d3 !default;
+$teal:     #4179CF !default;
 $dark:     #040620 !default;
 $violet:   #333867 !default;
 $default:  #474D84 !default;
@@ -69,6 +69,7 @@ $theme-colors: (
         info-light: #f2fafa,
         warning-light: #fdf7e6,
         danger-light: #fff2ef,
+        progress-bg: $progress-bg,
 );
 
 $link-color: $blue;

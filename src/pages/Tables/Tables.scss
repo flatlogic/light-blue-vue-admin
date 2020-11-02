@@ -4,4 +4,13 @@
   .table th {
     font-size: $font-size-sm;
   }
+
+  .abc-checkbox label {
+    &::before {
+      background-color: transparent;
+    }
+    &::after {
+      color: #eee;
+    }
+  }
 }

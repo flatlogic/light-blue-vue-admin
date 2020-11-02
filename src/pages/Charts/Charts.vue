@@ -162,3 +162,5 @@ export default {
   }
 };
 </script>
+
+<style src="./Charts.scss" lang="scss" />
