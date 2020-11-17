@@ -59,13 +59,13 @@
     <ul class="sidebarLabels d-sm-down-none">
       <li>
         <a href="#">
-          <i class="fa fa-circle text-warning mr-2" />
+          <i class="fa fa-circle text-success mr-2" />
           <span class="labelName">My Recent</span>
         </a>
       </li>
       <li>
         <a href="#">
-          <i class="fa fa-circle text-gray mr-2" />
+          <i class="fa fa-circle text-primary mr-2" />
           <span class="labelName">Starred</span>
         </a>
       </li>
