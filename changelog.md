@@ -1,6 +1,11 @@
 # Changelog
-## [v2.1.3]
 
+## [v2.1.4]
+### Updated
+- Update dependencies
+
+## [v2.1.3]
+### Updated
 - Add screenshot to assets, change progress bar bg color, update main colors
 - Badges: fix padding, font size
 - Visits: fix checkbox in table, fix adaptive problem, fix progress bar percents position
