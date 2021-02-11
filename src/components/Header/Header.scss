@@ -40,17 +40,24 @@
     }
   }
 
-
+.search-group {
   .input-group-text {
     padding-left: .85rem;
     color: $gray-600;
+    border-radius: 0;
   }
+  #search-input {
+    border-radius: 0;
+  }
+
+}
 
   .divider {
     display: block;
     width: 1px;
-    margin: 0 15px;
-    background: linear-gradient(rgba($dark, 0), rgba($text-color, 0.5), rgba($dark, 0));
+    height: 20px;
+    margin: 18px 15px;
+    background-color: rgba(255,255,255, 0.4);
   }
 
   .header-alert {
@@ -112,5 +119,8 @@
         margin-top: 0;
       }
     }
+  }
+  .avatar-toggle .dropdown-toggle::after {
+    display: none;
   }
 }

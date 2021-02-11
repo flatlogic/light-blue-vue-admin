@@ -7,24 +7,25 @@
           </b-alert>
         </b-nav-text>
         <b-nav-form class="d-sm-down-none mr-3">
-          <b-input-group class="input-group-transparent">
-            <b-input-group-text slot="prepend"><i class="la la-search"></i></b-input-group-text>
+          <b-input-group class="input-group-transparent search-group">
+            <b-input-group-text slot="prepend"><i class="fi flaticon-search-2"></i></b-input-group-text>
             <b-input class="input-transparent" id="search-input" placeholder="Search Dashboard" />
           </b-input-group>
         </b-nav-form>
-        <b-nav-item-dropdown right menu-class="py-0">
+        <b-nav-item-dropdown right class="avatar-toggle" menu-class="py-0">
           <template slot="button-content">
-            <span class="avatar rounded-circle thumb-sm float-left mr-2">
-              <img class="rounded-circle" src="../../assets/people/a5.jpg" alt="..." />
+            <span class="avatar rounded-circle thumb-sm-1 float-left mr-2">
+              <img class="rounded-circle" src="../../assets/people/a7.png" alt="..." />
             </span>
-            <span class="small">Philip Smith</span>
-            <span class="mx-2 circle bg-primary text-white fs-sm fw-bold">13</span>
+            <span class="text-white">Philip Smith</span>
+            <span class="mx-2 circle bg-danger text-dark fs-sm fw-bold">9</span>
+            <i class="fi flaticon-arrow-down" />
           </template>
           <notifications />
         </b-nav-item-dropdown>
         <b-nav-item-dropdown class="d-md-down-none" no-caret right menu-class="dropdown-menu-messages">
           <template slot="button-content">
-            <i class="la la-comment px-2" />
+            <i class="fi flaticon-message-circle px-2" />
           </template>
           <b-dropdown-item>
             <span class="avatar thumb-sm mr-3">
@@ -58,9 +59,9 @@
           </b-dropdown-item-button>
         </b-nav-item-dropdown>
         <b-nav-item class="divider d-md-down-none"></b-nav-item>
-        <b-nav-item-dropdown no-caret right menu-class="dropdown-menu-settings">
+        <b-nav-item-dropdown no-caret right class="mr-2" menu-class="dropdown-menu-settings">
           <template slot="button-content">
-            <i class="la la-cog px-2" />
+            <i class="fi flaticon-settings-10 px-2" />
           </template>
           <b-dropdown-item><i class="la la-user" /> My Account</b-dropdown-item>
           <b-dropdown-divider />
@@ -73,9 +74,9 @@
             <i class="la la-sign-out" /> Log Out
           </b-dropdown-item-button>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown no-caret right class="d-md-down-none">
+        <b-nav-item-dropdown no-caret right class="d-md-down-none mr-2">
           <template slot="button-content">
-            <i class="la la-globe px-2" />
+            <i class="fi flaticon-bell px-2" />
           </template>
           <b-dropdown-item>
             <span class="badge badge-danger mr-2"><i class="fa fa-bell-o"></i></span>
@@ -102,7 +103,7 @@
           </b-dropdown-item-button>
         </b-nav-item-dropdown>
         <b-nav-item class="d-md-down-none" @click="logout">
-          <i class="la la-power-off px-2" />
+          <i class="fi flaticon-power-1 px-2" />
         </b-nav-item>
         <b-nav-item class="d-md-none" @click="switchSidebarMethod" >
           <i class="la la-navicon px-2" />
@@ -130,7 +131,7 @@ export default {
     }),
   },
   methods: {
-    ...mapActions('layout', ['toggleSidebar', 'toggleChat', 'switchSidebar', 'changeSidebarActive']),
+    ...mapActions('layout', ['switchSidebar', 'changeSidebarActive']),
     switchSidebarMethod() {
       if (!this.sidebarClose) {
         this.switchSidebar(true);

@@ -91,11 +91,13 @@ $z-index-variants: (more: 1, less: -1, '10': 10, '-10': -10);
 @include thumb('.thumb-xl', 100px);
 @include thumb('.thumb-lg', 60px);
 @include thumb('.thumb', 48px);
+@include thumb('.thumb-sm-1', 40px);
 @include thumb('.thumb-sm', 34px);
 @include thumb('.thumb-xs', 28px);
 
 .thumb-xs,
 .thumb-sm,
+.thumb-sm-1,
 .thumb-lg,
 .thumb-xl,
 .thumb {
