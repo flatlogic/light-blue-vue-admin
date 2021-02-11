@@ -16,7 +16,7 @@
         </span>
         {{header}} <sup v-if="label" :class="'text-' + labelColor" class="ml-1 headerLabel">{{label}}</sup>
         <div :class="{caretWrapper: true, carretActive: isActive}">
-          <i class="fa fa-angle-left" />
+          <i class="fi flaticon-arrow-down" />
         </div>
       </router-link>
     </div>

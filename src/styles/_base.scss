@@ -170,3 +170,9 @@ table > thead > tr > th {
   border: 1px dashed $gray-600;
   margin: -1px -1px calc(#{$grid-gutter-width} - 1px) -1px;
 }
+
+div.sidebarAlert {
+  button.close {
+    color: #3979F6;
+  }
+}

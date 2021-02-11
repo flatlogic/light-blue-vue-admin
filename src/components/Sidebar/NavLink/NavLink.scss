@@ -11,9 +11,11 @@
 
   a {
     display: block;
-    color: $sidebar-color;
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
   }
 
   &:last-child > a {
@@ -24,7 +26,7 @@
   > div a {
     align-items: center;
     position: relative;
-    padding-left: 50px;
+    padding-left: 54px;
     line-height: 35px;
     border-top: 1px solid $sidebar-item-border-color;
     border-radius: $border-radius;
@@ -45,15 +47,14 @@
 
   .icon {
     font-size: $font-size-larger;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 3px;
     left: 11px;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    text-align: center;
-    opacity: .6;
+    width: 32px;
+    height: 32px;
 
     @media (min-width: map_get($grid-breakpoints, lg))
     and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
@@ -89,18 +90,22 @@
   margin-right: 15px;
 
   i {
+    transform: rotate(-90deg);
     @include transition(transform 0.3s ease-in-out);
   }
 }
 
 .carretActive i {
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
 }
 
 a.router-link-active {
-  &,
-  &:hover {
-    font-weight: $font-weight-bold !important;
-    color: $header-color;
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-base-large;
+
+  .icon {
+    border-radius: 50%;
+    background-color: #3979F6;
+
   }
 }

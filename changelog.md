@@ -6,7 +6,7 @@
 
 ## [v2.1.3]
 ### Updated
-- Add screenshot to assets, change progress bar bg color, update main colors
+- Add the screenshot to assets, change progress bar bg color, update main colors
 - Badges: fix padding, font size
 - Visits: fix checkbox in table, fix adaptive problem, fix progress bar percents position
 - Charts: fix label colors, apex dropdown text

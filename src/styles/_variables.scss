@@ -13,6 +13,7 @@ $fa-font-path: '../fonts/font-awesome' !default;
  * Fonts
  * ======================================================================== */
 $font-size-initial:       14px; // reset default browser value from 16px to 14px
+$font-size-base-large:    1.143rem;  // 16px
 $font-size-base:          1rem !default;
 $font-size-lg:            1.25rem !default;
 $font-size-sm:            0.875rem !default;
@@ -53,23 +54,23 @@ $violet:   #333867 !default;
 $default:  #474D84 !default;
 
 $theme-colors: (
-        primary: $blue,
-        secondary: rgba(#F4F4F5, .9),
-        success: $green,
-        info: $teal,
-        warning: $orange,
-        danger: $red,
-        dark: $dark,
-        inverse: #30314E,
-        gray: $gray-300,
-        light: $gray-100,
-        default: $default,
-        primary-light: #dee4ee,
-        success-light: #ecfaec,
-        info-light: #f2fafa,
-        warning-light: #fdf7e6,
-        danger-light: #fff2ef,
-        progress-bg: $progress-bg,
+  primary: $blue,
+  secondary: rgba(#F4F4F5, .9),
+  success: $green,
+  info: $teal,
+  warning: $orange,
+  danger: $red,
+  dark: $dark,
+  inverse: #30314E,
+  gray: $gray-300,
+  light: $gray-100,
+  default: $default,
+  primary-light: #dee4ee,
+  success-light: #ecfaec,
+  info-light: #f2fafa,
+  warning-light: #fdf7e6,
+  danger-light: #fff2ef,
+  progress-bg: $progress-bg,
 );
 
 $link-color: $blue;
@@ -113,7 +114,7 @@ $border-radius-sm:       0.25rem !default;
 //== Sidebar
 //
 
-$sidebar-width: 200px;
+$sidebar-width: 230px;
 $sidebar-transition-time: 0.3s !default;
 
 $sidebar-color: $text-color !default;
