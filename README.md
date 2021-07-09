@@ -47,11 +47,7 @@ git clone https://github.com/flatlogic/light-blue-vue-admin.git
 ```shell
 cd light-blue-vue-admin
 ```
-3. Install dependencies via npm or yarn
-```shell
-npm install
-```
-or
+3. Install dependencies via yarn
 ```shell
 yarn
 ```
@@ -59,7 +55,7 @@ yarn
 ## Quick start
 Run development server
 ```shell
-yarn run serve
+yarn serve
 ```
 
 ## Support
