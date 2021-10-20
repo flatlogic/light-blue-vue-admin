@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.1.5]
+### Updated
+- Update dependencies
+- Add link to generator in sidebar
+
 ## [v2.1.4]
 ### Updated
 - Update dependencies
