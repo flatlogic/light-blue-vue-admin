@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.1.6]
+### Updated
+- Update dependencies
+
 ## [v2.1.5]
 ### Updated
 - Update dependencies
