@@ -431,7 +431,6 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import Widget from '@/components/Widget/Widget';
 import Sparklines from '../../components/Sparklines/Sparklines'
 
@@ -443,7 +442,7 @@ export default {
       tableStyles: [
         {
           id: 1,
-          picture: require('../../assets/tables/1.jpg'), // eslint-disable-line global-require
+          picture: new URL('../../assets/tables/1.jpg', import.meta.url).href,
           description: 'Palo Alto',
           info: {
             type: 'JPEG',
@@ -458,7 +457,7 @@ export default {
         },
         {
           id: 2,
-          picture: require('../../assets/tables/2.jpg'), // eslint-disable-line global-require
+          picture: new URL('../../assets/tables/2.jpg', import.meta.url).href,
           description: 'The Sky',
           info: {
             type: 'PSD',
@@ -473,7 +472,7 @@ export default {
         },
         {
           id: 3,
-          picture: require('../../assets/tables/3.jpg'), // eslint-disable-line global-require
+          picture: new URL('../../assets/tables/3.jpg', import.meta.url).href,
           description: 'Down the road',
           label: {
             colorClass: 'danger',
@@ -492,7 +491,7 @@ export default {
         },
         {
           id: 4,
-          picture: require('../../assets/tables/4.jpg'), // eslint-disable-line global-require
+          picture: new URL('../../assets/tables/4.jpg', import.meta.url).href,
           description: 'The Edge',
           info: {
             type: 'PNG',
@@ -507,7 +506,7 @@ export default {
         },
         {
           id: 5,
-          picture: require('../../assets/tables/5.jpg'), // eslint-disable-line global-require
+          picture: new URL('../../assets/tables/5.jpg', import.meta.url).href,
           description: 'Fortress',
           info: {
             type: 'JPEG',
@@ -533,7 +532,7 @@ export default {
     },
     checkAll(ev, checkbox) {
       const checkboxArr = (new Array(this[checkbox].length)).fill(ev.target.checked);
-      Vue.set(this, checkbox, checkboxArr);
+      this[checkbox] = checkboxArr;
     },
     changeCheck(ev, checkbox, id) {
       this[checkbox][id] = ev.target.checked;

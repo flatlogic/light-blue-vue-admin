@@ -8,7 +8,7 @@
     <b-row>
       <b-col lg="7">
         <Widget class="bg-transparent">
-          <Map />
+          <VisitsMap />
         </Widget>
       </b-col>
       <b-col lg="4" offset-lg="1">
@@ -301,7 +301,7 @@
             </table>
           </div>
           <div class="widget-body mt-xlg chart-overflow-bottom">
-            <area-chart class="area-chart" height="100px" :options="{legend: false, scales: {yAxes: [{display: false}], xAxes: [{display: false}]}}"  :chart-data="dataCollection"></area-chart>
+            <area-chart class="area-chart" height="100px" :options="{responsive: true, maintainAspectRatio: false, plugins: {legend: {display: false}}, scales: {y: {display: false}, x: {display: false}}}"  :chart-data="dataCollection"></area-chart>
           </div>
         </Widget>
       </b-col>
@@ -327,17 +327,16 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import Widget from '@/components/Widget/Widget';
-import Map from './components/Map/Map';
+import VisitsMap from './components/Map/Map';
 import Calendar from './components/Calendar/Calendar';
 import AreaChart from './components/AreaChart/AreaChart';
-import AnimatedNumber from "animated-number-vue";
+import AnimatedNumber from "@/components/AnimatedNumber.vue";
 
 export default {
   name: 'Visits',
   components: {
-    Widget, Map, Calendar, AreaChart, AnimatedNumber
+    Widget, VisitsMap, Calendar, AreaChart, AnimatedNumber
   },
   data() {
     return {
@@ -349,7 +348,7 @@ export default {
         }
       },
       checkedArr: [false, false, false],
-      dataCollection: null,
+      dataCollection: { labels: [], datasets: [] },
     };
   },
   methods: {
@@ -375,7 +374,7 @@ export default {
           arr[0] = !arr[0];
         }
       }
-      Vue.set(this, 'checkedArr', arr);
+      this.checkedArr = arr;
     },
     fillData () {
       this.dataCollection = {
@@ -385,11 +384,15 @@ export default {
             label: 'Data One',
             backgroundColor: '#1870DC',
             borderColor: 'transparent',
+            fill: true,
+            tension: 0.4,
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }, {
             label: 'Data Two',
             backgroundColor: '#F45722',
             borderColor: 'transparent',
+            fill: true,
+            tension: 0.4,
             data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
           }
         ]

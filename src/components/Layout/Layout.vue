@@ -1,12 +1,12 @@
 <template>
 <div :class="{root: true, sidebarClose}">
   <Helper />
-  <Header />
+  <AppHeader />
   <Sidebar />
   <div ref="content" class="content animated fadeInUp">
-    <transition name="router-animation">
-      <router-view />
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="router-animation"><component :is="Component" /></transition>
+    </router-view>
   </div>
   <footer class="contentFooter">
     Light Blue Vue Admin Dashboard Template - Made by <a href="https://flatlogic.com" target="_blank">Flatlogic</a>
@@ -18,14 +18,14 @@
 import { mapState, mapActions } from 'vuex';
 
 import Sidebar from '@/components/Sidebar/Sidebar';
-import Header from '@/components/Header/Header';
+import AppHeader from '@/components/Header/Header';
 import Helper from '@/components/Helper/Helper';
 
 import './Layout.scss';
 
 export default {
   name: 'Layout',
-  components: { Sidebar, Header, Helper },
+  components: { Sidebar, AppHeader, Helper },
   methods: {
     ...mapActions(
       'layout', ['switchSidebar', 'changeSidebarActive'],

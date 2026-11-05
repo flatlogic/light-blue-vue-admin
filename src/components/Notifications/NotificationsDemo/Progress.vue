@@ -53,6 +53,6 @@
 
 <script>
 export default {
-  name: 'Progress',
+  name: 'NotificationProgress',
 };
 </script>

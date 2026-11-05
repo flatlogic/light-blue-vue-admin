@@ -11,10 +11,8 @@
 </template>
 
 <script>
-import Widget from '@/components/Widget/Widget';
 
 export default {
   name: 'AnotherPage',
-  components: { Widget },
 };
 </script>

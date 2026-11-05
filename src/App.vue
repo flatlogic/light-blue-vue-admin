@@ -6,13 +6,11 @@
 export default {
   name: 'App',
   created() {
-    const currentPath = this.$router.history.current.path;
+    const currentPath = this.$route.path;
 
     if (window.localStorage.getItem('authenticated') === 'false') {
       this.$router.push('/login');
-    }
-
-    if (currentPath === '/' || currentPath === '/app') {
+    } else if (currentPath === '/' || currentPath === '/app') {
       this.$router.push('/app/dashboard');
     }
   },

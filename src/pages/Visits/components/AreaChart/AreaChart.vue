@@ -1,15 +1,11 @@
+<template><LineChart :data="chartData" :options="options" /></template>
 <script>
-    import { Line, mixins } from 'vue-chartjs';
-    const { reactiveProp } = mixins;
-
-    export default {
-        extends: Line,
-        mixins: [reactiveProp],
-        props: ['options'],
-        mounted () {
-            // this.chartData is created in the mixin.
-            // If you want to pass options please create a local options object
-            this.renderChart(this.chartData, this.options)
-        }
-    }
+import { Line } from 'vue-chartjs';
+import { Chart, LineElement, PointElement, CategoryScale, LinearScale, Filler, Tooltip, Legend } from 'chart.js';
+Chart.register(LineElement, PointElement, CategoryScale, LinearScale, Filler, Tooltip, Legend);
+export default {
+  name: 'AreaChart',
+  components: { LineChart: Line },
+  props: { chartData: { type: Object, required: true }, options: { type: Object, required: true } }
+};
 </script>

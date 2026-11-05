@@ -1,5 +1,4 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 import Layout from '@/components/Layout/Layout';
 import Typography from '@/pages/Typography/Typography';
@@ -12,10 +11,9 @@ import Dashboard from '@/pages/Visits/Visits';
 import Login from '@/pages/Login/Login';
 import ErrorPage from '@/pages/Error/Error';
 
-Vue.use(Router);
 
-export default new Router({
-  mode: 'hash',
+export default createRouter({
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/login',
@@ -44,7 +42,7 @@ export default new Router({
         },
         {
           path: 'tables',
-          name: 'Typography',
+          name: 'Tables',
           component: Tables,
         },
         {
@@ -70,8 +68,8 @@ export default new Router({
       ],
     },
     {
-      path: '*',
-      name: 'Error',
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
       component: ErrorPage,
     }
   ],

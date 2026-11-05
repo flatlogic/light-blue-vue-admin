@@ -10,7 +10,7 @@
   </li>
   <li v-else-if="childrenLinks" :class="{headerLink: true, className}">
     <div @click="() => togglePanelCollapse(link)">
-      <router-link :to="link" event="" class="d-flex sidebar-link">
+      <a :href="`#${link}`" @click.prevent class="d-flex sidebar-link">
         <span class="icon">
           <i :class="fullIconName"></i>
         </span>
@@ -18,7 +18,7 @@
         <div :class="{caretWrapper: true, carretActive: isActive}">
           <i class="fi flaticon-arrow-down" />
         </div>
-      </router-link>
+      </a>
     </div>
     <b-collapse :id="'collapse' + index" :visible="isActive">
       <ul class="sub-menu">

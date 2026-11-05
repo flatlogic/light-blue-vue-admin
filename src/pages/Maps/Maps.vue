@@ -13,16 +13,16 @@
                 title="<h5>Vue Google Maps <small class='text-muted'>Default and customized</small></h5>"
                 customHeader close collapse
         >
-          <GmapMap
+          <GoogleMap :api-key="googleMapsKey"
                   :center="{lat: -37.813179, lng: 144.950259}"
                   :zoom="12"
                   style="width: 100%; height: 60vh"
                   :options="options"
           >
-            <GmapMarker
-                    :position="{lat: -37.813179, lng: 144.950259}"
+            <MapMarker
+                    :options="{ position: {lat: -37.813179, lng: 144.950259} }"
             />
-          </GmapMap>
+          </GoogleMap>
         </Widget>
       </b-col>
     </b-row>
@@ -30,26 +30,19 @@
 </template>
 
 <script>
+  import { GoogleMap, Marker as MapMarker } from 'vue3-google-map';
+  import config from '@/config';
   import Widget from '@/components/Widget/Widget';
 
   export default {
     name: 'Maps',
     data() {
       return {
-        options: {},
+        googleMapsKey: config.googleMapsKey,
+        options: { mapTypeControl: true },
       }
     },
-    created() {
-      this.$gmapApiPromiseLazy().then(() => {
-        this.options = {
-          mapTypeControl: true,
-          mapTypeControlOptions: {
-            style: google.maps.MapTypeControlStyle.DEFAULT
-          }
-        }
-      })
-    },
-    components: { Widget }
+    components: { Widget, GoogleMap, MapMarker }
   };
 </script>
 
