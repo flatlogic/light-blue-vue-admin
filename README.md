@@ -105,3 +105,15 @@ The Playwright regression uses local Chrome against the production build at `/li
 Production assets retain the existing hosting path. `npm start` serves the built app with Express; `npm run preview` previews it locally. No deployment runs during these checks. Sass deprecation and large-bundle warnings remain visible.
 
 Migration references: [BootstrapVue Vue 3 support](https://bootstrap-vue.org/vue3/), [Vue migration build](https://v3-migration.vuejs.org/migration-build), [Router initial navigation](https://router.vuejs.org/guide/advanced/transitions.html#Initial-navigation-and-transitions), [Chart.js 4 migration](https://www.chartjs.org/docs/latest/migration/v4-migration.html), [Highcharts modules](https://www.highcharts.com/docs/getting-started/version-12), [VCalendar 3](https://vcalendar.io/getting-started/installation.html).
+
+GitHub Pages serves the tracked `docs/` directory from `master`. Refresh the complete generated demo after source/dependency updates, preserving any human-authored files:
+
+```bash
+npm ci
+npm run build -- --base=/light-blue-vue-admin/ --outDir=docs
+touch docs/.nojekyll
+```
+
+The existing hash routes use the repository base path. Commit the rebuilt assets together with `index.html` and remove obsolete hashed chunks.
+
+The `.nojekyll` marker keeps the generated static files out of Jekyll processing.
