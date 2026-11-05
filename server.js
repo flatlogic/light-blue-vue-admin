@@ -1,8 +1,7 @@
-var express = require('express');
-var serveStatic = require('serve-static');
+import express from 'express';
+import { fileURLToPath } from 'node:url';
 
-var app = express();
-app.use(serveStatic(__dirname + "/dist"));
-
-var port = process.env.PORT || 5000;
-app.listen(port);
+const app = express();
+app.use('/light-blue-vue-admin', express.static(fileURLToPath(new URL('./dist', import.meta.url))));
+app.use(express.static(fileURLToPath(new URL('./dist', import.meta.url))));
+app.listen(process.env.PORT || 5000);

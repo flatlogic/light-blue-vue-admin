@@ -90,6 +90,7 @@ import Loader from '../Loader/Loader';
 
 export default {
   name: 'Widget',
+  compatConfig: { INSTANCE_LISTENERS: false },
   data: function() {
     return {
       state: this.collapsed ? 'collapse' : 'default'
@@ -126,7 +127,7 @@ export default {
     },
   },
   mounted() {
-    if (this.autoload && this.$listeners && this.$listeners.load) {
+    if (this.autoload && this.$attrs.onLoad) {
       this.loadWidgster();
       if (typeof this.autoload === 'number') {
         setInterval(() => {this.loadWidgster()}, this.autoload);
@@ -164,8 +165,8 @@ export default {
         parentToRemove ? $parentEl.remove() : this.$el.remove();
       };
 
-      if (this.$listeners && this.$listeners.close) {
-        this.$listeners.close(removeFunction.bind(this));
+      if (this.$attrs.onClose) {
+        this.$attrs.onClose(removeFunction.bind(this));
       } else {
         removeFunction();
       }

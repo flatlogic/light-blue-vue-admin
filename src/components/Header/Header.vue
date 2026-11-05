@@ -8,12 +8,12 @@
         </b-nav-text>
         <b-nav-form class="d-sm-down-none mr-3">
           <b-input-group class="input-group-transparent search-group">
-            <b-input-group-text slot="prepend"><i class="fi flaticon-search-2"></i></b-input-group-text>
+            <template #prepend><b-input-group-text><i class="fi flaticon-search-2"></i></b-input-group-text></template>
             <b-input class="input-transparent" id="search-input" placeholder="Search Dashboard" />
           </b-input-group>
         </b-nav-form>
         <b-nav-item-dropdown right class="avatar-toggle" menu-class="py-0">
-          <template slot="button-content">
+          <template #button-content>
             <span class="avatar rounded-circle thumb-sm-1 float-left mr-2">
               <img class="rounded-circle" src="../../assets/people/a7.png" alt="..." />
             </span>
@@ -24,7 +24,7 @@
           <notifications />
         </b-nav-item-dropdown>
         <b-nav-item-dropdown class="d-md-down-none" no-caret right menu-class="dropdown-menu-messages">
-          <template slot="button-content">
+          <template #button-content>
             <i class="fi flaticon-message-circle px-2" />
           </template>
           <b-dropdown-item>
@@ -60,7 +60,7 @@
         </b-nav-item-dropdown>
         <b-nav-item class="divider d-md-down-none"></b-nav-item>
         <b-nav-item-dropdown no-caret right class="mr-2" menu-class="dropdown-menu-settings">
-          <template slot="button-content">
+          <template #button-content>
             <i class="fi flaticon-settings-10 px-2" />
           </template>
           <b-dropdown-item><i class="la la-user" /> My Account</b-dropdown-item>
@@ -75,7 +75,7 @@
           </b-dropdown-item-button>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown no-caret right class="d-md-down-none mr-2">
-          <template slot="button-content">
+          <template #button-content>
             <i class="fi flaticon-bell px-2" />
           </template>
           <b-dropdown-item>
@@ -117,7 +117,7 @@ import { mapState, mapActions } from 'vuex';
 import Notifications from '@/components/Notifications/Notifications';
 
 export default {
-  name: 'Header',
+  name: 'AppHeader',
   components: { Notifications },
   data() {
     return {

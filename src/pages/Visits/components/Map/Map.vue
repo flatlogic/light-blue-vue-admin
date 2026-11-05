@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import AnimatedNumber from "animated-number-vue";
+import AnimatedNumber from "@/components/AnimatedNumber.vue";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
 import am4geodata_usaHigh from "@amcharts/amcharts4-geodata/usaHigh";
@@ -24,7 +24,7 @@ import am4geodata_usaHigh from "@amcharts/amcharts4-geodata/usaHigh";
 import cities from './mock';
 
 export default {
-  name: 'Map',
+  name: 'VisitsMap',
   components: { AnimatedNumber },
   data() {
     return {
@@ -42,6 +42,9 @@ export default {
         }
       }
     }
+  },
+  beforeUnmount() {
+    this.map.dispose();
   },
   mounted() {
     let map = am4core.create(this.$refs.map, am4maps.MapChart);

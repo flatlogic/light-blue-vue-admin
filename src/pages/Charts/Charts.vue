@@ -24,7 +24,7 @@
               title="<h5>Echarts <span class='fw-semi-bold'>Line Chart</span></h5>"
               close collapse customHeader
           >
-            <echart :options="cd.echarts.line" :init-options="initEchartsOptions" style="height: 370px"></echart>
+            <echart theme="v5" :option="cd.echarts.line" :init-options="initEchartsOptions" style="height: 370px"></echart>
           </Widget>
         </b-col>
         <b-col xs='12' lg='5'>
@@ -75,7 +75,7 @@
                   title="<h5>Echart <span class='fw-semi-bold'>Donut Chart</span></h5>"
                   close collapse customHeader
               >
-                <echart :options="cd.echarts.donut" :init-options="initEchartsOptions" style="height: 175px"></echart>
+                <echart theme="v5" :option="cd.echarts.donut" :init-options="initEchartsOptions" style="height: 175px"></echart>
               </Widget>
             </b-col>
             <b-col xs="12" lg="12">
@@ -93,7 +93,7 @@
               title="<h5>Echart <span class='fw-semi-bold'>River Chart</span></h5>"
               close collapse customHeader
           >
-            <echart :options="cd.echarts.river" :init-options="initEchartsOptions" style="height: 350px;"></echart>
+            <echart theme="v5" :option="cd.echarts.river" :init-options="initEchartsOptions" style="height: 350px;"></echart>
           </Widget>
         </b-col>
       </b-row>
@@ -105,19 +105,16 @@
 import Widget from "@/components/Widget/Widget";
 import {chartData, liveChart, liveChartInterval} from './mock';
 
-import ECharts from 'vue-echarts/components/ECharts';
-import 'echarts/lib/chart/line';
-import 'echarts/lib/chart/themeRiver';
-import 'echarts/lib/chart/pie';
-import 'echarts/lib/component/tooltip';
-import 'echarts/lib/component/legend';
-
-import Highcharts from 'highcharts';
-import exporting from 'highcharts/modules/exporting';
-import exportData from 'highcharts/modules/export-data';
-
-exporting(Highcharts);
-exportData(Highcharts);
+import ECharts from 'vue-echarts';
+import { use } from 'echarts/core';
+import { CanvasRenderer } from 'echarts/renderers';
+import { LineChart, PieChart, ThemeRiverChart } from 'echarts/charts';
+import { GridComponent, TooltipComponent, LegendComponent, SingleAxisComponent } from 'echarts/components';
+import 'echarts/theme/v5';
+use([CanvasRenderer, LineChart, PieChart, ThemeRiverChart, GridComponent, TooltipComponent, LegendComponent, SingleAxisComponent]);
+import 'highcharts/modules/exporting';
+import 'highcharts/modules/export-data';
+import 'highcharts/modules/accessibility';
 
 import { Chart } from 'highcharts-vue';
 import Sparklines from '../../components/Sparklines/Sparklines'
@@ -157,7 +154,7 @@ export default {
       }
     }
   },
-  beforeDestroy() {
+  beforeUnmount() {
     clearInterval(liveChartInterval);
   }
 };

@@ -11,7 +11,7 @@
           </b-alert>
           <b-form-group label="Email" label-for="email">
             <b-input-group>
-              <b-input-group-text slot="prepend"><i class="la la-user text-white"></i></b-input-group-text>
+              <template #prepend><b-input-group-text><i class="la la-user text-white"></i></b-input-group-text></template>
               <input id="email"
                      ref="email"
                      class="form-control input-transparent pl-3"
@@ -22,7 +22,7 @@
           </b-form-group>
           <b-form-group label="Password" label-for="password">
             <b-input-group>
-              <b-input-group-text slot="prepend"><i class="la la-lock text-white"></i></b-input-group-text>
+              <template #prepend><b-input-group-text><i class="la la-lock text-white"></i></b-input-group-text></template>
               <input id="password"
                      ref="password"
                      class="form-control input-transparent pl-3"

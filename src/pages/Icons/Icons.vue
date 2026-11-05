@@ -234,7 +234,7 @@
         </b-row>
       </b-tab>
       <b-tab>
-        <template slot="title">
+        <template #title>
          FA 4.7.0 <b-badge variant="danger">new</b-badge>
        </template>
        <h4>Awesome <span class="fw-semi-bold">Font Awesome</span></h4>
@@ -2877,4 +2877,4 @@ export default {
 };
 </script>
 
-<script src="./Icons.scss" lang="scss" scoped />
+<style src="./Icons.scss" lang="scss" scoped />

@@ -15,6 +15,7 @@ const colors = {
 };
 
 export default {
+  googleMapsKey: 'AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg',
   colors: {
     ...colors,
     white: "#fff"

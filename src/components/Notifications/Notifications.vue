@@ -6,7 +6,7 @@
     <NewNotifictionsList v-if="newNotifications" />
     <NotifictionsList v-else-if="notificationsTabSelected === 1" />
     <Messages v-else-if="notificationsTabSelected === 2" />
-    <Progress v-else-if="notificationsTabSelected === 3" />
+    <NotificationProgress v-else-if="notificationsTabSelected === 3" />
     <NotifictionsList v-else/>
     <footer class="text-sm footer px-4 py-2">
       <span class="fs-mini">Synced at: 21 Apr 2019 18:36</span>
@@ -23,17 +23,16 @@
 </template>
 
 <script>
-import Vue from 'vue';
 
 import NotifictionsList from './NotificationsDemo/NotificationsList';
 import NewNotifictionsList from './NotificationsDemo/NewNotificationsList';
 import Messages from './NotificationsDemo/Messages';
-import Progress from './NotificationsDemo/Progress';
+import NotificationProgress from './NotificationsDemo/Progress';
 
 export default {
   name: 'Notification',
   components: {
-    NotifictionsList, NewNotifictionsList, Messages, Progress,
+    NotifictionsList, NewNotifictionsList, Messages, NotificationProgress,
   },
   data() {
     return {
@@ -44,11 +43,11 @@ export default {
   },
   methods: {
     loadNotifications() {
-      Vue.set(this, 'isLoad', true);
+      this.isLoad = true;
 
       setTimeout(() => {
-        Vue.set(this, 'newNotifications', 'new notifications component');
-        Vue.set(this, 'isLoad', false);
+        this.newNotifications = 'new notifications component';
+        this.isLoad = false;
       }, 1500);
     },
   },
