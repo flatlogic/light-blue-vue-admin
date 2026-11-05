@@ -20,6 +20,9 @@ test('preserves login, dashboard map/calendar/charts, Bootstrap controls, notifi
   await expect(page.locator('canvas.area-chart')).toBeVisible()
   await page.locator('.lb-calendar .vc-day').filter({ has: page.locator('.vc-dot') }).first().hover()
   await expect(page.getByText('The flower bed', { exact: true })).toBeVisible()
+  await expect(page.locator('.vc-popover-content')).not.toHaveCSS('background-color', 'rgb(255, 255, 255)')
+  await page.locator('.page-title').hover()
+  await page.evaluate(() => window.scrollTo(0, 0))
   await expect(page.locator('.visits-page')).toContainText('75%')
   await page.screenshot({ path: 'test-results/dashboard.png', fullPage: false })
 

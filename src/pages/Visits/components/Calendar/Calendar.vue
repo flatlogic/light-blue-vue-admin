@@ -1,6 +1,6 @@
 <template>
   <span class="lb-calendar">
-    <v-calendar expanded :attributes="attrs">
+    <v-calendar expanded is-dark :attributes="attrs">
       <template #day-popover="{dayTitle, attributes}">
         <header class="fs-sm text-light fw-semi-bold text-center">
           {{ dayTitle }}
